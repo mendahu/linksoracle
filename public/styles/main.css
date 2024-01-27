@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: rgb(28, 28, 28);
+  color: rgb(236, 236, 236);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  align-self: center;
+  max-width: 500px;
+}
+
+main p {
+  text-align: justify;
+}
+
+a {
+  color: rgb(94, 223, 131);
+}
+
+a:visited {
+  color: rgb(68, 162, 94);
+}
+
+.btn {
+  text-decoration: none;
+  background-color: rgb(87, 182, 114);
+  color: rgb(28, 28, 28);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cta-box {
+  margin-block: 1rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+}
+
+.cta-box a {
+  width: 100%;
+  color: inherit;
+}
+
+.cta-box a:visited {
+  color: rgb(28, 28, 28);
+}
+
+h1 + [role="doc-subtitle"] {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(219, 219, 219);
+  font-style: italic;
+  margin-top: 0;
+}
+
+figure {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: rgb(219, 219, 219);
+  font-style: italic;
+}
+
+figure img,
+figure figcaption {
+  max-width: 100%;
+}
+
+code {
+  background-color: rgb(57, 57, 57);
+  color: rgb(94, 223, 131);
+  padding: 0.1rem 0.5rem;
+  border-radius: 8px;
+}
