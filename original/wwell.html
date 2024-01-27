@@ -1,0 +1,538 @@
+<HTML>
+  <HEAD>
+  <TITLE>Link's Oracle</TITLE>
+  </HEAD>
+  <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN"><!--'"</title></head>-->
+  
+  <script type="text/javascript">
+  //OwnerIQ
+  var __oiq_pct = 50;
+  if( __oiq_pct>=100 || Math.floor(Math.random()*100/(100-__oiq_pct)) > 0 ) {
+  var _oiqq = _oiqq || [];
+  _oiqq.push(['oiq_addPageBrand','Lycos']);
+  _oiqq.push(['oiq_addPageCat','Internet > Websites']);
+  _oiqq.push(['oiq_addPageLifecycle','Intend']);
+  _oiqq.push(['oiq_doTag']);
+  (function() {
+  var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+  oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/lycosn.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+  })();
+  }
+  //Google Analytics
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount','UA-21402695-19']);
+  _gaq.push(['_setDomainName','tripod.com']);
+  _gaq.push(['_setCustomVar',1,'member_name','ganon4',3]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  //Lycos Init
+  function getReferrer() {
+  var all= this.document.cookie;
+  if (all== '') return false;
+  var cookie_name = 'REFERRER=';
+  var start = all.lastIndexOf(cookie_name);
+  if (start == -1) return false;
+  start += cookie_name.length;
+  var end = all.indexOf(';', start);
+  if (end == -1) end = all.length;
+  return all.substring(start, end);
+  }
+  function getQuery() {
+  var rfr = getReferrer();
+  if (rfr == '') return false;
+  var q = extractQuery(rfr, 'yahoo.com', 'p=');
+  if (q) return q;
+  q = extractQuery(rfr, '', 'q=');
+  return q ? q : "";
+  }
+  function extractQuery(full, site, q_param) {
+  var start = full.lastIndexOf(site);
+  if (start == -1) return false;
+  start = full.lastIndexOf(q_param);
+  if (start == -1) return false;
+  start += q_param.length;
+  var end = full.indexOf('&', start);
+  if (end == -1) end = full.length;
+  return unescape(full.substring(start, end)).split(" ").join("+");
+  }
+  function generateHref(atag, template){
+  atag.href=template.replace('_MYURL_', window.location.href.replace('http://', '')).replace('_MYTITLE_','Check%20out%20this%20Tripod%20Member%20site!'); 
+  }
+  var lycos_ad = Array();
+  var lycos_onload_timer;
+  var cm_role = "live";
+  var cm_host = "tripod.lycos.com";
+  var cm_taxid = "/memberembedded";
+  var tripod_member_name = "ganon4";
+  var tripod_member_page = "ganon4/wwell.html";
+  var tripod_ratings_hash = "1706312574:baf12ca0191c08af8706865f6d84f2f9";
+  
+  var lycos_ad_category = {"dmoz":"society\/religion_and_spirituality","ontarget":"&CAT=family%20and%20lifestyles&L2CAT=religion%20and%20spirituality","find_what":"build my website"};
+  
+  var lycos_ad_remote_addr = "209.202.244.9";
+  var lycos_ad_www_server = "www.tripod.lycos.com";
+  var lycos_ad_track_small = "";
+  var lycos_ad_track_served = "";
+  var lycos_search_query = getQuery();
+  </script>
+  
+  <script type="text/javascript" src="https://scripts.lycos.com/catman/init.js"></script>
+  
+  <script type='text/javascript'>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+   (function() {
+     var gads = document.createElement('script');
+     gads.async = true;
+     gads.type = 'text/javascript';
+     var useSSL = 'https:' == document.location.protocol;
+     gads.src = (useSSL ? 'https:' : 'http:') +
+       '//www.googletagservices.com/tag/js/gpt.js';
+     var node = document.getElementsByTagName('script')[0];
+     node.parentNode.insertBefore(gads, node);
+   })();
+  </script>
+  
+  <script type='text/javascript'>
+   googletag.cmd.push(function() {
+     googletag.defineSlot('/95963596/TRI_300X250_dfp', [300, 250], 'div-gpt-ad-1450204159126-0').addService(googletag.pubads());
+     googletag.defineSlot('/95963596/TRI_above_728x90_dfp', [728, 90], 'div-gpt-ad-1450204159126-1').addService(googletag.pubads());
+     googletag.defineSlot('/95963596/TRI_below_728x90_dfp', [728, 90], 'div-gpt-ad-1450204159126-2').addService(googletag.pubads());
+     googletag.pubads().enableSingleRequest();
+     googletag.enableServices();
+   });
+  </script>
+  
+  
+  <script type="text/javascript"> 
+  (function(isV)
+  {
+      if( !isV )
+      {
+          return;
+      }
+      var adMgr = new AdManager();
+      var lycos_prod_set = adMgr.chooseProductSet();
+      var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2", "slider"];
+      var adCat = this.lycos_ad_category;
+      adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+      if (this.lycos_search_query)
+      {
+          adMgr.setForcedParam("keyword", this.lycos_search_query);
+      } 
+      else if(adCat && adCat.find_what)
+      {
+          adMgr.setForcedParam('keyword', adCat.find_what);
+      }
+      
+      for (var s in slots)
+      {
+          var slot = slots[s];
+          if (adMgr.isSlotAvailable(slot))
+          {
+              this.lycos_ad[slot] = adMgr.getSlot(slot);
+          }
+      }
+  
+      adMgr.renderHeader();
+      adMgr.renderFooter();
+  }((function() {
+  
+  var w = 0, h = 0, minimumThreshold = 300;
+  
+  if (top == self)
+  {
+      return true;
+  }
+  if (typeof(window.innerWidth) == 'number' )
+  {
+      w = window.innerWidth;
+      h = window.innerHeight;
+  }
+  else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight))
+  {
+      w = document.documentElement.clientWidth;
+      h = document.documentElement.clientHeight;
+  }
+  else if (document.body && (document.body.clientWidth || document.body.clientHeight))
+  {
+      w = document.body.clientWidth;
+      h = document.body.clientHeight;
+  }
+  return ((w > minimumThreshold) && (h > minimumThreshold));
+  }())));
+  
+  
+  
+  
+  window.onload = function()
+  {
+      var f = document.getElementById("FooterAd");
+      var b = document.getElementsByTagName("body")[0];
+      b.appendChild(f);
+      f.style.display = "block";
+      document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+      
+  
+  
+      
+      // DOM Inj Ad
+      (function(isTrellix)
+      {
+          var e = document.createElement('iframe');
+          e.style.border = '0';
+          e.style.margin = 0;
+          e.style.display = 'block';
+          e.style.cssFloat = 'right';
+          e.style.height = '254px';
+          e.style.overflow = 'hidden';
+          e.style.padding = 0;
+          e.style.width = '300px';
+  
+  
+          var isBlokedByDomain = function( href )
+          {
+              var blockedDomains = [
+                  "ananyaporn13000.tripod.com",
+                  "xxxpornxxx.tripod.com"
+              ];
+              var flag = false;
+              
+              for( var i=0; i<blockedDomains.length; i++ )
+              {
+                  if( href.search( blockedDomains[ i ] ) >= 0 )
+                  {
+                      flag = true;
+                  }
+              }
+              return flag;
+          }
+  
+          var getMetaContent = function( metaName )
+          {
+              var metas = document.getElementsByTagName('meta');
+              for (i=0; i<metas.length; i++)
+              { 
+                  if( metas[i].getAttribute("name") == metaName )
+                  { 
+                      return metas[i].getAttribute("content"); 
+                  } 
+              }
+              return false;
+          }
+          
+          var getCommentNodes = function(regexPattern)
+          {
+              var nodes = {};
+              var nodesA = [];
+              var preferredNodesList = ['a', 'c', 'b'];
+          
+              (function getNodesThatHaveComments(n, pattern)
+              {
+                  if (n.hasChildNodes())
+                  {
+                      if (n.tagName === 'IFRAME')
+                      {
+                          return false;
+                      }
+                      for (var i = 0; i < n.childNodes.length; i++)
+                      {
+                          if ((n.childNodes[i].nodeType === 8) && (pattern.test(n.childNodes[i].nodeValue)))
+                          {
+                              var areaName = pattern.exec(n.childNodes[i].nodeValue)[1];
+                              nodes[areaName] = n;
+                          }
+                          else if (n.childNodes[i].nodeType === 1)
+                          {
+                              getNodesThatHaveComments(n.childNodes[i], pattern);
+                          }
+                      }
+                  }
+              }(document.body, regexPattern));
+  
+              for (var i in preferredNodesList)
+              {
+                  if (nodes[preferredNodesList[i]])
+                  {
+                      if( isTrellix && nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode )
+                      {
+                          nodesA.push(nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode);
+                      }
+                      else
+                      {
+                          nodesA.push( nodes[preferredNodesList[i]] );
+                      }
+                  }
+              }
+              return nodesA;
+          }
+          
+          
+          var properNode = null;
+          var areaNodes = getCommentNodes( new RegExp( '^area Type="area_(\\w+)"' ) );
+  
+          for (var i = 0; i < areaNodes.length; i++)
+          {
+              var a = parseInt(getComputedStyle(areaNodes[i]).width);
+              if ((a >= 300) && (a <= 400))
+              {
+                  properNode = areaNodes[i];
+                  break;
+              }
+          }
+  
+  
+          var propertyName = getMetaContent("property") || false;
+          if( isTrellix && (properNode) )
+          {
+              e.src = '/adm/ad/injectAd.iframe.html';
+              properNode.insertBefore(e, properNode.firstChild);
+          }
+          else if( isTrellix && !( properNode ) ) // Slap the ad eventhought there is no alocated slot
+          {
+              e.src = '/adm/ad/injectAd.iframe.html';
+              e.style.cssFloat = 'none';
+              var cdiv = document.createElement('div');
+              cdiv.style = "width:300px;margin:10px auto;";
+              cdiv.appendChild( e );
+              b.insertBefore(cdiv, b.lastChild);
+          }
+          else if( !isBlokedByDomain( location.href ) )
+          {
+              var injF = document.createElement('iframe');
+              injF.style.border = '0';
+              injF.style.margin = 0;
+              injF.style.display = 'block';
+              injF.style.cssFloat = 'none';
+              injF.style.height = '254px';
+              injF.style.overflow = 'hidden';
+              injF.style.padding = 0;
+              injF.style.width = '300px';
+              injF.src = '/adm/ad/injectAd.iframe.html';
+  
+              if( b && ( !isTrellix || ( typeof isTrellix == "undefined" ) ) ) // All other tripod props
+              {
+                  var cdiv = document.createElement('div');
+                  cdiv.style = "width:300px;margin:10px auto;";
+                  cdiv.appendChild( injF );
+                  b.insertBefore(cdiv, b.lastChild);
+              } 
+          }
+    }( document.isTrellix ));
+  }
+  
+  </script>
+  
+  <div id="tb_container" style="background:#DFDCCF; border-bottom:1px solid #393939; position:relative; z-index:999999999!important">
+  <!--form name="search" onSubmit="return searchit()" id='header_search' >
+  <input type="text" placeholder="Search" size=30 name="search2" value="">
+  <input type="button" value="Go!" onClick="searchit()">
+  </form>
+  <style>
+  form#header_search {
+      width: 916px;
+      margin: 0 auto 8px;
+      position: relative;
+  }
+  
+  
+  form#header_search input {
+      height: 40px;
+      font-size: 14px;
+      line-height: 40px;
+      padding: 0 8px;
+      box-sizing: border-box;
+      background: #F4F2E9;
+      border: 1px solid #BBB8B8;
+      transition: background-color 300ms ease-out,
+                  color 300ms ease;
+  }
+  
+  form#header_search input[type="text"] {
+      width: 100%;
+  }
+  form#header_search input[type="text"]:focus {
+      border-color: #A2D054;
+      background-color: #fff;
+      box-shadow: 0 0px 12px -4px #A2D054;
+  }
+  
+  
+  
+  form#header_search input[type="button"] {
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      opacity: 1;
+      background: #DFDCCF;
+      color: #463734;
+      width: 125px;
+      cursor: pointer;
+      height: 38px;
+      border: none;
+  }
+  form#header_search input[type="text"]:focus ~ input[type='button']:hover,
+  form#header_search input[type='button']:hover {
+      background-color: #A5CE56;
+      color: #fff;
+  }
+  form#header_search input[type="text"]:focus ~ input[type='button'] {
+      background-color: #52AEDF;
+      color: #fff;
+  }
+  
+  </style>
+  
+  <script>
+  function searchit(){
+      
+      // determine environment 
+      var search_env 
+      if (lycos_ad_www_server.indexOf(".pd.") > -1) {
+         search_env = 'http://search51.pd.lycos.com/a/';
+      } else if (lycos_ad_www_server.indexOf(".qa.") > -1) {
+         search_env = 'http://search51.qa.lycos.com/a/';
+      } else {
+         search_env = 'http://search51.lycos.com/a/';
+      }
+  
+  var search_term = encodeURIComponent(document.search.search2.value)
+  var search_url = search_env+search_term;
+  window.open(search_url);
+  
+  return false
+  }
+  </script-->
+  <style>
+      .adCenterClass{margin:0 auto}
+  </style>
+  <div id="tb_ad" class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+  
+  <div id="ad_container" style="display:block!important; float:left; width:728px ">
+  <script type="text/javascript">
+  if (typeof lycos_ad !== "undefined" && "leaderboard" in lycos_ad) {
+    document.write(lycos_ad['leaderboard']);
+  }
+  </script>
+  </div>
+  </div>
+  </div>
+  <script type="text/javascript">
+  if (typeof lycos_ad !== "undefined" && "slider" in lycos_ad) {
+    document.write(lycos_ad['slider']);
+  }
+  </script> <!-- added 7/22 -->
+  <div id="FooterAd" style="background:#DFDCCF; border-top:1px solid #393939; clear:both; display:none; width:100%!important; position:relative; z-index:999999!important; height:90px!important"> 
+  <div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+  <div id="footerAd_container" style="display:block!important; float:left; width:728px">
+  <iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+  </div>
+  </div>
+  </div>
+  
+  
+  <FONT FACE="Zurich Ex BT" SIZE="2.5">
+  <BGSOUND SRC="z64-kakariko.mid" LOOP="10">
+  <H1 ALIGN="CENTER">Bottom of the Well</H1>
+  <HR>
+  <P>
+  This level is nasty.  So, after 2 hours of mapping it out, I've found 
+  a way to get to the Lens of Truth very quickly.  There are a bunch of 
+  treasures scattered in this level but they are almost all WORTHLESS!  
+  Most of them are a single Deku nut.  I'm going to tell you how to get 
+  the Lens of Truth, a gold rupee (worth 200 rupees), and finally the 3 
+  gold skulltula's that are here (I've never mentioned most of the gold 
+  skulltulas before but explaining them here instead of making you 
+  explore this whole confusing level to get them is just easier.)  Crawl 
+  through the hole and climb down the ladder.  Kill the skulltula then 
+  walk straight forward right through the wall in front of you (yes, you 
+  heard right, this level has walls you can walk through, invisible 
+  floors, etc.).  Now you're in the main well room.  Watch out for the 
+  giant green flaming skull flying around and just keep running straight 
+  forward through another wall.  Now ignore everything in this room but 
+  watch out, there's a small invisible pit right in the center of the 
+  room where all that blood is.  Move around the pit and keep moving 
+  forward to the opposite wall and, again, walk through it.  Now stand 
+  on the Triforce symbol in front of you and play Zelda's Lullaby.  The 
+  water will drain out.<BR><BR> 
+  
+  Now turn around and go back through the wall, avoid the pit, through 
+  the next wall, and you're back where you started, except now there's a 
+  big pit in front of you.  Fall down it and crawl through the hole 
+  that's down there.  Kill the skulltula, climb up the vines and go 
+  through the door to the Bottom of the Well boss.  This guy is scary 
+  but easy.  It's basically a swing-your-sword-wildly-at-anything-that-
+  moves affair.  You can kill the hands coming out of the ground.  
+  If they grab you just wildly mash your buttons until they let go and 
+  keep slashing at them.  You don't need to kill the hands, just the 
+  weird thing walking around trying to bite you.  Once it's dead, a 
+  treasure box will appear containing the Lens of Truth.  Use the lens 
+  of truth in this room and you'll find an invisible treasure box.  
+  Open it for 200 rupees.  Now if you wish, you can just leave now by 
+  playing the Prelude of Light and go on to the next section.  
+  Otherwise, read on for how to get the 3 gold skulltulas in this 
+  level.<BR><BR> 
+  
+  Get out of the pit.  Now go down the left path a little bit and if you 
+  use your lens you'll see a small alcove in the right hand wall.  Go in 
+  and retrieve the key that's there.  Now leave the alcove and go left 
+  (back toward the starting point).  Keep going and you'll hit a left 
+  turn.  Turn and use your lens and you'll see another alcove containing 
+  another key.  Now leave the alcove and continue down the corridor.  
+  A little ways more and you'll see a cage with a Shield-eater in it.  
+  Directly across from it is a wall you can walk through.  Go through 
+  it and walk straight across the room (avoid the pit in the middle!  
+  You can see it with your lens now).  Go through the opposite wall and 
+  down the small corridor.  You'll see a grate ahead of you.  Fall down 
+  the pit you come to, walk under the grate, and climb up the vines on 
+  the opposite side and go through the door.<BR><BR> 
+  
+  Now in this next room is a mummy.  Use your Song of the Sun to stun 
+  it and kill it with your sword.  Now take out a Deku stick and light 
+  it with the torch but DO NOT LIGHT ANY TORCHES with it yet.  All these 
+  torches open the coffin next to them and will release more enemies.  
+  You need to light a specific torch.  It's the torch in the corner 
+  furthest from the door and to the left when looking from the door.  
+  Light the torch and the coffin will open letting out two bats.  Kill 
+  the bats and inside the coffin is the third and final small key.  If 
+  the bats burned away your Deku shield don't worry you can get another 
+  free one on the way to the third spider.  Now head out of this room, 
+  fall down the pit and climb up the other side, and go straight through 
+  the wall in front of you.  Look left and there's a locked door.  Go 
+  through and kill the plant, watch out for the pots, they attack you, 
+  and there's spider number 1.<BR><BR> 
+  
+  Leave and turn left, avoid the pit, and there's another locked door on 
+  the other side of the room.  In here is a bunch of bats and a big pit 
+  in the middle.  Don't worry, there's an invisible floor.  Just walk 
+  around the outside of the pit and you won't fall in.  The spider is in 
+  the opposite corner of the room from where you entered.  Now leave the 
+  room, turn left immediately and walk through the wall.  Turn left 
+  again and continue down this corridor.  You'll see some kind of face 
+  picture on the wall at the end of the corridor.  Right underneath it 
+  is a pit so don't fall down it.  Now turn right at the end of the 
+  corridor and you'll be at a dead end with a hole to crawl through.  
+  Crawl through and go through the locked door.  Before moving into 
+  this room use your lens to see all the pits spread all over the 
+  place.  Kill the bats and kill the laser shooting thing in the middle 
+  of the room by throwing a bomb at it.  The chest in this room contains 
+  a replacement Deku shield if you lost yours.  Go through the door and 
+  you'll be in the cage with the Shield-eater.  Avoid it when it tries 
+  to suck you into it and hit it with your boomerang or sword when it 
+  stops.  Kill the third and final gold skulltula in this room.  Now use 
+  your Ocarina and play the Prelude of Light to warp out of this 
+  hellhole and end up back in the Temple of Time.  Go into the Master S
+  word room and replace the Master Sword to warp to the future and 
+  continue your main quest.  Pat yourself on the back for getting 3 
+  well-earned skulltulas and the Lens of Truth.
+  </P>
+  <HR>
+  <P ALIGN="CENTER"><A HREF="walkthrough.html">Back to Walkthroughs</A></P>
+  </FONT>
+  </body>
+  </HTML>

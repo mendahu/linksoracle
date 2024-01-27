@@ -1,0 +1,228 @@
+<HTML>
+  <HEAD>
+  <TITLE>Link's Oracle</TITLE>
+  <SCRIPT LANGUAGE="JavaScript">
+  <!-- Begin
+  var expDays = 30;
+  var exp = new Date(); 
+  exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+  function Who(info){
+  var VisitorName = GetCookie('VisitorName')
+  if (VisitorName == null) {
+  VisitorName = prompt("What is thine name, Valiant Hero?");
+  SetCookie ('VisitorName', VisitorName, exp);
+  }
+  return VisitorName;
+  }
+  function When(info){
+  var rightNow = new Date()
+  var WWHTime = 0;
+  WWHTime = GetCookie('WWhenH')
+  WWHTime = WWHTime * 1
+  var lastHereFormatting = new Date(WWHTime);
+  var intLastVisit = (lastHereFormatting.getYear() * 10000)+(lastHereFormatting.getMonth() * 100) + lastHereFormatting.getDate()
+  var lastHereInDateFormat = "" + lastHereFormatting;
+  var dayOfWeek = lastHereInDateFormat.substring(0,3)
+  var dateMonth = lastHereInDateFormat.substring(4,11)
+  var timeOfDay = lastHereInDateFormat.substring(11,16)
+  var year = lastHereInDateFormat.substring(23,25)
+  var WWHText = dayOfWeek + ", " + dateMonth + " at " + timeOfDay
+  SetCookie ("WWhenH", rightNow.getTime(), exp)
+  return WWHText
+  }
+  function Count(info){
+  var WWHCount = GetCookie('WWHCount')
+  if (WWHCount == null) {
+  WWHCount = 0;
+  }
+  else{
+  WWHCount++;
+  }
+  SetCookie ('WWHCount', WWHCount, exp);
+  return WWHCount;
+  }
+  function set(){
+  VisitorName = prompt("Who are you?");
+  SetCookie ('VisitorName', VisitorName, exp);
+  SetCookie ('WWHCount', 0, exp);
+  SetCookie ('WWhenH', 0, exp);
+  }
+  function getCookieVal (offset) {  
+  var endstr = document.cookie.indexOf (";", offset);  
+  if (endstr == -1)    
+  endstr = document.cookie.length;  
+  return unescape(document.cookie.substring(offset, endstr));
+  }
+  function GetCookie (name) {  
+  var arg = name + "=";  
+  var alen = arg.length;  
+  var clen = document.cookie.length;  
+  var i = 0;  
+  while (i < clen) {    
+  var j = i + alen;    
+  if (document.cookie.substring(i, j) == arg)      
+  return getCookieVal (j);    
+  i = document.cookie.indexOf(" ", i) + 1;    
+  if (i == 0) break;   
+  }  
+  return null;
+  }
+  function SetCookie (name, value) {  
+  var argv = SetCookie.arguments;  
+  var argc = SetCookie.arguments.length;  
+  var expires = (argc > 2) ? argv[2] : null;  
+  var path = (argc > 3) ? argv[3] : null;  
+  var domain = (argc > 4) ? argv[4] : null;  
+  var secure = (argc > 5) ? argv[5] : false;  
+  document.cookie = name + "=" + escape (value) + 
+  ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+  ((path == null) ? "" : ("; path=" + path)) +  
+  ((domain == null) ? "" : ("; domain=" + domain)) +    
+  ((secure == true) ? "; secure" : "");
+  }
+  function DeleteCookie (name) {  
+  var exp = new Date();  
+  exp.setTime (exp.getTime() - 1);  
+  var cval = GetCookie (name);  
+  document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+  }
+  //  End -->
+  </SCRIPT>
+  
+  </HEAD>
+  <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN">
+    
+  <FONT FACE="Zurich Ex BT" SIZE="2.5">
+  <BGSOUND SRC="z-owremix3.mid" LOOP=10>
+  <H1 ALIGN="CENTER"><IMG SRC="oracle.jpg" ALT="Link's Oracle: The Best 
+  Zelda 64 Site Out There"></H1>
+  <P ALIGN="CENTER">
+  <!-- BEGIN FASTCOUNTER CODE --><a href="http://member.linkexchange.com/cgi-bin/fc/fastcounter-login?1081835" target="_top">
+  
+  <img border="0" src="http://fastcounter.linkexchange.com/fastcounter?1081835+2163677"></a>
+  <!-- END FASTCOUNTER CODE --></P>
+  <CENTER>
+  <SCRIPT LANGUAGE="JavaScript">
+  document.write("Welcome " + Who() + ". You have visited Link's Oracle " + Count() + " time(s).  It was " + When() +" when you last visited Link's Oracle. Why so long? :)");
+  </SCRIPT>
+  </CENTER><BR>
+  
+  <p align="center"><b>Hey webmasters!! Want 100,000+ hits more per month? Join this program 
+  and get your site listed #1 on loads of sites!!! Just sign up and follow instructions! Awesome! Click
+  <a href="http://www.special-report-network.net/specialreports.cgi/GD27830" target="_top">Here!</a><br>
+  <p align="center"><A HREF="http://zeldasite.cjb.net/soscar.html"><IMG SRC="http://zeldasite.cjb.net/images/oscarsmallbutt1.gif" target="_blank" WIDTH=88 HEIGHT=31 BORDER=0 ALT="The Zelda Oscars by Zelda-Temple"></A></p><br>
+  <table border="1" cellspacing="0" bordercolor="#008000"
+  bordercolordark="#008000" bordercolorlight="#008000">
+      <tr>
+          <td bgcolor="#008000"><font size="2" face="Zurich Ex BT">Link's Oracle- July 8/1999</font></td>
+      </tr>
+      <tr>
+          <td><font size="2" face="Zurich Ex BT">Hey, big news. I will not be updating this site anymore.  All the neccessary info
+  is up and you can still use this site but I will no longer be updating any links, quiz resuslts, or Hyrule at War.  The Game is
+  too much for me to handle and No one else understands it.  If you check out that section I am putting up a legacies section and keeping the links section up
+  so you can still play Zelda Games online.  No forms will be answered and I will check my email once a week now.  I know I am
+  dissappointing everyone but if you had to update 200 numbers everyday you'd get tired of it too.  Well So long, and perhaps there will be more
+  sites from the famous Ganon...</tr>
+  </table>
+  
+  
+  <P ALIGN="CENTER"><A HREF="http://coolsurfin.net/cgi-bin/zelda/bigiron.cgi?ID=83" TARGET="_TOP">
+  <IMG SRC="http://coolsurfin.net/zelda/vote.jpg" border="0" width="150" height="150"></A></P>
+  <P ALIGN="CENTER">VOTE FOR ME!</P>
+  <p><center><a href="http://linksoracle.zzn.com">
+  <img src=
+  "http://www.zzn.com/informail/
+  images/but_service_English.gif"
+  BORDER="0" 
+  alt="Get a Free E-mail Address"></a> <a href=
+  "http://www.zzn.com/informail/home.asp">
+  <img src="http://www.zzn.com/informail/
+  images/but_ZapZone_English.gif"
+  BORDER="0"
+  alt="Get your Own E-mail service"></a> <br>
+  <a href="http://linksoracle.zzn.com">Get your own Email Here</a>|<a href="http://www.zzn.com/informail/home.asp">Get your own email service</a>
+  <form method="POST" action="http://linksoracle.zzn.com/email/login/loginaction.asp" name="login">
+  <input type="hidden" name="company" value="linksoracle">
+  <input type="hidden" name="Interface" value="0">
+  <table width="350" border="0" cellpadding="2" cellspacing="0">
+    <tr>
+      <td colspan="3" BGcolor="#ffffff" height="20">
+      <font face="arial" size="3" color="#000000">
+      <b>&nbsp;Login to linksoracle mail </b></font>
+       </td>
+    </tr>
+    <tr><td colspan="3" BGcolor="#ffffff"><img src="http://linksoracle.zzn.com/email/images/spacer2.gif" border="0" width="350" height="1"></td></tr>
+    <tr>
+      <td BGcolor="#ffffff"><font face="arial" size="2" color="#000000"><b>&nbsp;User Name:</b></font>
+      </td>
+      <td BGcolor="#ffffff"><font face="arial" size="2" color="#000000"><b>&nbsp;Password:</b></font>
+      </td>
+      <td BGcolor="#ffffff">&nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td BGcolor="#ffffff">&nbsp;<input type="text" name="loginname" size="10">
+      </td>
+      <td BGcolor="#ffffff">&nbsp;<input type="password" name="loginpassword" size="10">
+      </td>
+      <td BGcolor="#ffffff" width="80" align="right">
+        <input type="image" name="Log_in" src="http://linksoracle.zzn.com/email/images/btn_lgn.gif" alt="Login" border="0">
+      </td>
+    </tr>
+    <tr>
+      <td BGcolor="#ffffff" colspan="3">
+    <table border="0" width="350">
+      <tr>
+        <td>
+        <font size="1" face="Arial,Geneva" color="#808080">
+        <a href="http://linksoracle.zzn.com/email/TSupport/start.asp?Company=zzn&subdomain=linksoracle&EIP=0" target="_self">Technical Support</a>			
+        </font>
+        </td>
+        
+        <td align="center">
+        <font size="1" face="Arial,Geneva" color="#808080">
+        <a href="http://linksoracle.zzn.com/email/noframes/help/p_help.html"
+        target="_blank">Help</a>
+        </font>
+        </td>
+  
+        <td align="right" BGcolor="#ffffff">
+        <font size="1" face="Arial,Geneva" color="#808080">
+        <a href="http://linksoracle.zzn.com/email/login/HintLogin.asp?Company=linksoracle&amp;Interface=0"
+          target="_self">Password Reminder</a>
+        </font>
+        </td>
+      </tr>
+    </table>
+        </td>
+      </tr>
+    </TABLE>
+  </form>
+  
+  
+  <!-- BEGIN LINKEXCHANGE CODE --> 
+  <center><iframe src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+  width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no><a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" 
+  src="http://leader.linkexchange.com/1/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/1/X1034640/clicklogo" 
+  target="_top"><img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
+  <!-- END LINKEXCHANGE CODE --><BR>
+  
+  <!-- Hyrule Code -->
+  <center>
+  <a href="http://hyrule2.hypermart.net/">
+  <img src="http://hyrule2.hypermart.net/hyrule.gif" alt="Hyrule: Home of HWF (Hyrule Wrestling Federation)">
+  </a>
+  <!-- End Code for Hyrule -->
+  
+  <table width=468 height=60 cellspacing=0 cellpadding=0 border=0><tr><td valign=top><a href="http://ads.mybannerswap.com/mbs/at-adclick.cgi?1000000771" target=_top><img alt="Zelda Sites Banner Xchange" src="http://ads.mybannerswap.com/mbs/nph-ad.cgi?1000000771-Y" width=468 height=60 border=0></a><br><center><a href="http://www.lohyrule.com/" target=_top><font size=2>Member of ZSBX</font></a></center></td></tr></table>
+  
+  <!-- start of NedStat code -->
+  <P ALIGN="CENTER"><a href="http://nedstat.tripod.com/bin/viewstat?name=ganon4-1"><img
+  src="http://nedstat.tripod.com/bin/nedstat.gif?name=ganon4-1" 
+  border=0 alt="Nedstat Counter" width=22 height=22></a></P>
+  <!-- end of NedStat code -->
+  </P>
+  <P ALIGN="CENTER"><I>Best viewed in Microsoft Internet Explorer 4.0+. Do not use Netscape!</I></P>
+  <P ALIGN="CENTER"><a href="http://www.microsoft.com/msdownload/iebuild/msnie5/en-ca/msnie5.htm" target="_top"><IMG SRC="IErules.gif"></a></P>
+  </body>
+  </HTML>
