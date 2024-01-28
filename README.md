@@ -1,0 +1,3 @@
+# Link's Oracle
+
+Many years ago at the end of the last millenium, 13-year-old me turned an obsession with famed Nintendo 64 game [The Legend of Zelda: Ocarina of Time](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time) into his very first website, called Link's Oracle. Through some miraculous stroke of luck, the website survived decades of technology changes and corporate buyouts and remains hosted at its [original location](https://ganon4.tripod.com/oracle.html) on Tripod. I've rehosted it here for archival purposes, and it serves now as a reflection of my past self, a look at the internet as it once was, and, well, a laugh.
