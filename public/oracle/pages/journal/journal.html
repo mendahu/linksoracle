@@ -1,15 +1,68 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="GREEN" VLINK="YELLOW">
   
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z-owremix3.mid" LOOP=10>
+
+<!-- Begin Annotation -->
+  <div style="display:flex;justify-content:center;width:100%;margin-block:1rem;">
+    <details class="annotation">
+      <summary>Music</summary>
+      Music is one of my other passions - when I made this site, I was learning guitar
+      and drums and later went on to take music in college. So of course, any website I
+      made would have to have auto-playing MIDI files! 
+      <br /><br/>
+      I've had to make some changes to the code to get these to work today in your
+      browser, so this doesn't look exactly like it did back then. In 1999, you would not have 
+      seen this little widget with controls and the file name - it just played on loop behind
+      the scenes. That's a little obnoxious by today's standards, so I've at least given you
+      controls to stop it if you're v upset.
+      <br /><br/>
+      I also had to upgrade the code to modern conventions - the 
+      <abbr title="HyperText Markup Language">HTML</abbr> element I used in 1999 was a non-standard
+      one that Microsoft was pushing and only worked in Internet Explorer. Since then, browsers
+      have settled on a common standard. I also had to convert the files to MP3, but don't worry
+      the original MIDI files are still available for download in the Musica section.
+    </details>
+  </div>
+  <!-- End Annotation -->
+
+  <!--
+  BGSOUND element is one of those non-standard things that Microsoft
+  tried to make standard by supporting it in IE. Modern browsers don't even look
+  at it! 
+
+  I looked into whether the modern <audio> component would work with MIDI files
+  but it seems like MIDI was dropped in favour of more modern audio. There seemed
+  to be some JS libraries that might add some non-native support but that felt like
+  overkill for this. Instead, I've batch converted the MIDI files to MP3 so that I can
+  just auto-play them on page load, as I had intended all those years ago. 
+
+  For usability, I've added controls to allow you to stop the music (you did not have this
+  power in 1999, lucky you!)
+  -->
+  <!-- <BGSOUND SRC="z-owremix3.mid" LOOP=10> -->
+  <figure class="music-player">
+    <figcaption>
+      Music - OWremix3.mid (converted to MP3)
+    </figcaption>
+    <audio src="../../assets/music/z-owremix3.mp3" autoplay controls loop></audio>
+  </figure>
+
   <H1 ALIGN="CENTER">Link's Journal</H1>
   <HR>
   <P>Here is a complete listing of the updates here at Link's Oracle.</P>
   <HR>
+  <!-- 
+  Interesting choice of using multiple table elements for this list of posts.
+  I suspect it made it easier to copy and paste the one from the main page
+  when it "expired" and needed to be archived here. Semantic elements were
+  not a concept at this time, I don't think LOL. 
+  -->
   <table border="1" cellspacing="0" bordercolor="#008000"
   bordercolordark="#008000" bordercolorlight="#008000">
       <tr>
@@ -25,6 +78,16 @@
   wait for someone. If I can get two people in there, then there should be a constant traffic cuz people will
   stay and talk.  Well, until later, bye.</tr>
   </table>
+
+  <!-- Begin Annotation -->
+  <br />
+    <details class="annotation">
+      <summary>Posts</summary>
+      Not sure what I had against putting some margin between these posts!
+    </details>
+<br />
+  <!-- End Annotation -->
+
   <table border="1" cellspacing="0" bordercolor="#008000"
   bordercolordark="#008000" bordercolorlight="#008000">
       <tr>
@@ -61,7 +124,21 @@
   https://members.tripod.com/ganon4/oracle.html</a>. Also, join the Gerudo in Hyrule at War.
   They are about to be involved in a major war and need amounts that are enormous of Soldiers.
   Please! And uh don't join the Hylians because I think they are going to be horribly beaten
-  and vanquished so...</font></td>
+  and vanquished so...</font>
+  <!-- Begin Annotation -->
+  <br /><br />
+    <details class="annotation">
+      <summary>Zap.to</summary>
+      Zap.to was a redirection service you could sign up for to shorten your url. The canonical
+      url above is the original hosting location, and since domain names were too difficult for me
+      to figure out, this service was great. You could just type <code>zap.to/oracle</code> and get
+      to the site.<br /><br />
+      Hilariously all these years later, a simialr redirection service serves as the basis for one
+      of the projects my students do at Web Development bootcamp. 
+    </details>
+<br />
+  <!-- End Annotation -->
+</td>
       </tr>
   </table>
   <table border="1" cellspacing="0" bordercolor="#008000"
@@ -79,7 +156,17 @@
   what you want in the next game. Well I Hope this game turns out good. I also
   put up some more links in the links section and I am still looking for a
   Java Script person to work here. If you know Java Script or Just Java and want 
-  to work here, please e-mail me in the e-mail seciton. Thanks!</font></td>
+  to work here, please e-mail me in the e-mail seciton. Thanks!</font>
+  <!-- Begin Annotation -->
+  <br /><br />
+    <details class="annotation">
+      <summary>JavaScript</summary>
+      Hey there past Jake, future Jake knows JavaScript if you still need help. He even
+      knows the difference between Java and JavaScript!
+    </details>
+<br />
+  <!-- End Annotation -->
+</td>
       </tr>
   </table>
   <table border="1" cellspacing="0" bordercolor="#008000"
@@ -161,6 +248,14 @@
   some stuff as usual and thats all. Hyrule at war is doing good. 40 people! There might be a war coming up... Hey about 
   the java, it might not work right so...<BR><BR>
   NOTE-Java Bombed. Its gone now.</P>
+    <!-- Begin Annotation -->
+    <br />
+    <details class="annotation">
+      <summary>Java</summary>
+      I really wanna know what kind of Java I was trying to add...
+    </details>
+<br />
+  <!-- End Annotation -->
   <P>MAY 17 99</P>
   <P>Hey I finished the page, in a sense. All the primary info is up and
   my only job now is to add Glitches and Rumors and Pics and stuff as they
@@ -190,6 +285,15 @@
   this point, because he's making one for the site. I need another staff member. If there are any good
   graphic/design artists out there who are willing to create graphics for my site for free, please e-mail me. I know you're thinking
   FREE??? You'd be surprised how rewarding it is to call something your own. So please E-mail Me!!! I will work on a bunch of stuff today including Howto and glitches, so.</P>
+    <!-- Begin Annotation -->
+    <br />
+    <details class="annotation">
+      <summary>Graphic Artist</summary>
+      Wow, past Jake really serving up the exposure scam to exploit the working class. How 
+      is that graphic artist supposed to pay the rent with that Jake???
+    </details>
+<br />
+  <!-- End Annotation -->
   <P>MAY 10 99</P>
   <P>Hey I will work on Howto and I found some music Files I will put up. Also I will fix a bunch of Glitches so.
   Hyrule at War News, We have a total of 20 people in the game and hope for more. The Kokiri, the Zoras and the Shiekah need you.</P>
@@ -200,10 +304,21 @@
   I will probably work on the Howto today and maybe that game comment section. Well c'ya later!</P>
   <P>MAY 06 99</P>
   <P>Hey the game worked out well so far. The Gerudos are fairly popular as I thought they'd be.
-  Please join it by clicking <A HREF="war.html">Hyrule at War!</A> <--there or at the bottom of the navbar. 
+  Please join it by clicking <A HREF="../war/war.html">Hyrule at War!</A> <--there or at the bottom of the navbar. 
   We need some Kokiri, Gorons, Sheikah, Zoras and some Hylians, mostly. Today I will work on a little bit of
   the Howto section but not much. I have to prepare for my Party, tomorrow. I might not update tomorrow except
   for the game stuff. Bye!</P>
+    <!-- Begin Annotation -->
+    <br />
+    <details class="annotation">
+      <summary>Party</summary>
+      Total aside, but I'm pretty sure this "Party" in question here was my 14th birthday, and it might
+      have been my very first "boy-girl" party as we called them back then, where you had the guts to 
+      invite the girls in your class to your birthday instead of just all your stinky boy buds. Big day 
+      for past me.
+    </details>
+<br />
+  <!-- End Annotation -->
   <P>MAY 05 99<BR><BR>
   Today is My one month Anniversary and I am as you read this, working on the game! It will be so cool!
   Also, I might get to doin some Howto stuff and Maybe make the glitches section. I did finish the Gold Skulltulas
@@ -238,6 +353,14 @@
   was good for me. This week really sucked for me, I lost about 90% of my hits. Anyway, I will be putting an editorial section up and
   try to get that interactive game i've been teasing you about working. Got a players guide today. My info will be upgraded. Well until then! <I>My e-mail does work. Thanks for all the 
   feedback and keep it coming!</I></P>
+    <!-- Begin Annotation -->
+    <br />
+    <details class="annotation">
+      <summary>Churnoble</summary>
+      I don't remember this, but it sounds like it was pretty bad! <a href="https://en.wikipedia.org/wiki/CIH_(computer_virus)">[Chernobyl Virus on Wikipedia]</a>
+    </details>
+<br />
+  <!-- End Annotation -->
   <P>APR 24 99<BR><BR>
   Hey, I got the music section up and complete last night and put a new quiz up. My hotmail account is messed up right now, 
   so I tried making a new one which will be my main address now, it is <A HREF="mailto:Links_Oracle@hotmail.com">Links_Oracle@hotmail.com</A>, and it won't work either
@@ -251,12 +374,20 @@
   I will finish Screen shots and try to start the music section so that you can get the music midis for Zelda 64. Please people, sign my guestbook, I'd appriciate it alot.
   Umm...Oh yeah, I will start making the page smaller in types so that it will load as fast as it can possibly load for the viewers benefit.
   Please keep the votes coming and give me feedback. Thanx.</P>
+      <!-- Begin Annotation -->
+      <br />
+      <details class="annotation">
+        <summary>Forms</summary>
+        Editors note: Forms are still hard.
+      </details>
+  <br />
+    <!-- End Annotation -->
   <P>APR 20 99<BR><BR>
   Hey got my award section up and tried sticking a form on the links page for linking to me.
   If that wasn't the biggest failier of my life then...So If you have a link, then E-mail Me!!
   I will try to work on screenshots and my own award might be coming up so stay tuned... Also, I might be adding a comments section for brief comments or maybe even reviews of my site. Send them in.
   And one little teaser, I might if I get to it and find some help create and interactive game of Zelda. It not really a zelda game, it has nothing
-  to do with Link, but it could proove fun. I got my <A HREF="http://fastcounter.linkexchange.com/">LE Fast Counter</A> up and...Finally, I got my guestbook up. Please sign it! Stay tuned, same bat channel, same bat time...<BR><BR>
+  to do with Link, but it could proove fun. I got my LE Fast Counter up and...Finally, I got my guestbook up. Please sign it! Stay tuned, same bat channel, same bat time...<BR><BR>
   APR 21 99<BR><BR>
   Happy Secrataries Day! I got some more of the screenshots page up and applied for a bunch of awards. Hopefully I'll get them. I thought more
   about the interactive game thing and I've decided that if I can get help, I will do it. If you wish to help, you must have at least passed the game of Legend of Zelda: Ocarina of Time,
@@ -303,11 +434,35 @@
   Browsers are free!!!  So, we got frames, title (gotta finish my logo!), and e-mail.
   My links are there, but not active, heh, heh.  I downloaded some pics of weapons, enemies and stuff
   and I will put them on the pages they belong on when they are up. Got a couple of pictures up now too.</P>
-  
   <HR>
+  <!--
+  Gross, some kind of iFrame thing. These are so cursed.
+  I legit don't remember what this was at all.
+  -->
   <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/12/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/12/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/12/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/12/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/12/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
+  <center>
+    <!-- <iframe 
+      src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+      width=468 
+      height=60 
+      marginwidth=0 
+      marginheight=0 
+      hspace=0 
+      vspace=0 
+      frameborder=0 
+      scrolling=no
+    > -->
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+        <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+        <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+      <!-- </a> -->
+    <!-- </iframe> -->
+    <br>
+    <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+      <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+    <!-- </a> -->
+    <br>
+  </center>
   <!-- END LINKEXCHANGE CODE -->
   <HR>
   <P ALIGN="CENTER"><A HREF="infoside.html">Back Home</A></P>

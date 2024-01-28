@@ -10,8 +10,12 @@ details.annotation {
   border: none;
   padding: 0.4rem 1rem;
   font-family: Helvetica, sans-serif;
-  max-width: 250px;
+  max-width: 300px;
   text-align: left;
+}
+
+details.annotation a {
+  color: rgb(189, 189, 255);
 }
 
 details[open].annotation {
