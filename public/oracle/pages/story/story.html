@@ -1,10 +1,56 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="GREEN" VLINK="YELLOW">
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-poetrader.mid" LOOP=10>
+      <!-- Begin Annotation -->
+  <div style="display:flex;justify-content:center;width:100%;margin-block:1rem;">
+    <details class="annotation">
+      <summary>Music</summary>
+      Music is one of my other passions - when I made this site, I was learning guitar
+      and drums and later went on to take music in college. So of course, any website I
+      made would have to have auto-playing MIDI files! 
+      <br /><br/>
+      I've had to make some changes to the code to get these to work today in your
+      browser, so this doesn't look exactly like it did back then. In 1999, you would not have 
+      seen this little widget with controls and the file name - it just played on loop behind
+      the scenes. That's a little obnoxious by today's standards, so I've at least given you
+      controls to stop it if you're v upset.
+      <br /><br/>
+      I also had to upgrade the code to modern conventions - the 
+      <abbr title="HyperText Markup Language">HTML</abbr> element I used in 1999 was a non-standard
+      one that Microsoft was pushing and only worked in Internet Explorer. Since then, browsers
+      have settled on a common standard. I also had to convert the files to MP3, but don't worry
+      the original MIDI files are still available for download in the Musica section.
+    </details>
+  </div>
+  <!-- End Annotation -->
+
+      <!--
+  BGSOUND element is one of those non-standard things that Microsoft
+  tried to make standard by supporting it in IE. Modern browsers don't even look
+  at it! 
+
+  I looked into whether the modern <audio> component would work with MIDI files
+  but it seems like MIDI was dropped in favour of more modern audio. There seemed
+  to be some JS libraries that might add some non-native support but that felt like
+  overkill for this. Instead, I've batch converted the MIDI files to MP3 so that I can
+  just auto-play them on page load, as I had intended all those years ago. 
+
+  For usability, I've added controls to allow you to stop the music (you did not have this
+  power in 1999, lucky you!)
+  -->
+  <!-- <BGSOUND SRC="z64-poetrader.mid" LOOP=10> -->
+  <figure class="music-player">
+    <figcaption>
+      Music - OWremix3.mid (converted to MP3)
+    </figcaption>
+    <audio src="../../assets/music/z64-poetrader.mp3" autoplay controls loop></audio>
+  </figure>
+
   <H1 ALIGN="CENTER">Story</H1>
   <HR>
   <P ALIGN="LEFT">Before leaving their new world, 
@@ -69,9 +115,34 @@
   <BR>
   
   
+  <!--
+  Gross, some kind of iFrame thing. These are so cursed.
+  I legit don't remember what this was at all.
+  -->
   <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/21/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/21/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/21/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/21/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/21/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
+  <center>
+    <!-- <iframe 
+      src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+      width=468 
+      height=60 
+      marginwidth=0 
+      marginheight=0 
+      hspace=0 
+      vspace=0 
+      frameborder=0 
+      scrolling=no
+    > -->
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+        <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+        <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+      <!-- </a> -->
+    <!-- </iframe> -->
+    <br>
+    <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+      <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+    <!-- </a> -->
+    <br>
+  </center>
   <!-- END LINKEXCHANGE CODE -->
   
   <BR><BR>
