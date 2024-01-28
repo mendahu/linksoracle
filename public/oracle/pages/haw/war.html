@@ -1,28 +1,80 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
+  <script src="../../scripts/music-player.js"></script>
+  <script>appendMusic("z64-hyrulefield.mp3")</script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN">
   
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
   <BGSOUND SRC="z64-hyrulefield.mid" LOOP=10>
-  <P ALIGN="CENTER"><IMG SRC="warlogo.jpg" ALT="Hyrule at War!"></P>
+
+  <P ALIGN="CENTER"><IMG SRC="../../assets/warlogo.jpg" ALT="Hyrule at War!"></P>
   <HR>
   <P>Welcome to Hyrule at War! My online game which has been commented as very similar to Risk.
   Here you can join armies, fight wars and gain honorary mention and ranks!
   Join any of 6 races and live the simulation!</P>
+
+  <!-- Begin Annotation -->
+  <details class="annotation">
+    <summary>Hyrule at War</summary>
+    This was probably my crowning achievement on this site. It was a "game" that users could sign up for
+    by choosing a side. Every day, I would go through the registrations and add them to a page
+    which tracked who was on each team. Then I would run a "simulation" for what would happen that day.<br/><br/>
+    The "simulation" was nothing more than me assigning some probabilities to different events and then 
+    rolling dice to see what happened. Sometimes the teams would go to war and I'd roll more dice
+    to determine outcomes, etc. Sometimes players would die and they would have to restart. Or they'd survive
+    and gain experience.<br /><br />
+    There wasn't any strategy to it, you just hopped on and enjoyed the ride. I think at one point I had 
+    come up with a way to use the Warcraft II video game on my computer to be the simulator, assigning 
+    different team makeups to units in that game. But I don't remember much of this anymore.<br /><br />
+    It was very popular with my friends and I think there were something like 100+ people registered to "play".
+    There were even some copycats (see the links to Other Games).
+  </details>
+  <!-- End Annotation -->
+
   <HR>
   <P ALIGN="CENTER">
   <a href="warlink.html">Other Games</a>|<a href="legacy.html">Legacy</a>The Legacies of Hyrule at War.</P>
   <HR>
   <P ALIGN="CENTER"></FONT><FONT FACE="Zurich Ex BT" SIZE="3" COLOR="RED"></P>
   <HR>
+  <!--
+  Gross, some kind of iFrame thing. These are so cursed.
+  I legit don't remember what this was at all.
+  -->
   <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/20/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/20/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/20/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/20/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/20/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
+  <center>
+    <!-- <iframe 
+      src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+      width=468 
+      height=60 
+      marginwidth=0 
+      marginheight=0 
+      hspace=0 
+      vspace=0 
+      frameborder=0 
+      scrolling=no
+    > -->
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+        <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+        <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+      <!-- </a> -->
+    <!-- </iframe> -->
+    <br>
+    <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+      <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+    <!-- </a> -->
+    <br>
+  </center>
   <!-- END LINKEXCHANGE CODE -->
   <HR>
-  <P ALIGN="CENTER"><A HREF="infoside.html">Back Home</A></P>
+  <P ALIGN="CENTER"><A HREF=".../home/infoside.html">Back Home</A></P>
   </FONT>
   </body>
   </HTML>

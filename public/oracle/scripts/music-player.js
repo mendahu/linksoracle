@@ -73,7 +73,7 @@ function createMusicAnnotation() {
 function appendMusic(filename) {
   document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById("music-player")
-    container.setAttribute("style", "display:flex;align-items:center;width:100%;margin-block:1rem;flex-direction:column;gap:1rem");
+    container.setAttribute("style", "display:flex;align-items:center;width:100%;margin-block:1rem;flex-direction:column");
     container.appendChild(createMusicAnnotation())
     container.appendChild(createMusicPlayer(filename))
   });
