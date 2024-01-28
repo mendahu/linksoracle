@@ -1,25 +1,69 @@
 <HTML>
   <HEAD>
-  <TITLE>Link's Oracle</TITLE>
-  <script language="JavaScript1.2">
-  
-  /*
-  Disable right mouse click Script
-  � Dynamic Drive (www.dynamicdrive.com)
-  For full source code, installation instructions,
-  100's more DHTML scripts, and Terms Of
-  Use, visit dynamicdrive.com
-  This script last updated:99/04/05
-  */
-  
-  if (document.all)
-  document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)')")
-  
-  </script>
+    <TITLE>Link's Oracle</TITLE>
+    <link rel="stylesheet" href="../../styles/annotations.css" />
+    <link rel="stylesheet" href="../../styles/music-player.css" />
+    <script src="../../scripts/music-player.js"></script>
+    <script>appendMusic("z64-kokiri.mp3")</script>
+    <script language="JavaScript1.2">
+
+    /*
+    I remember implementing this, believe it or not. It came from a
+    very weird place - I didn't want people stealing the images off 
+    the site, so this would trigger an alert if you tried to right-click
+    > save anywhere in the document.
+
+    This is especially strange considering all these images are not
+    mine and were just stolen from other sites LOL. And as you can
+    see below, so was the script to prevent it!
+    */
+    
+    /*
+    Disable right mouse click Script
+    � Dynamic Drive (www.dynamicdrive.com)
+    For full source code, installation instructions,
+    100's more DHTML scripts, and Terms Of
+    Use, visit dynamicdrive.com
+    This script last updated:99/04/05 (RIP)
+    */
+
+    // Looks like Chrome has discontinued support for onmousedown, mostly due to it
+    // being too narrow of use in a world of touch devices (this event wouldn't capture
+    // a long press).
+
+    // ORIGINAL CODE
+    // (I don't know if I've ever used the Function constructor syntax like this, it's pretty wild)
+    // if (document.all)
+    // document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)')")
+
+    // I've sort of reimplemented it here for posterity, triggering the alert.
+    // It doesn't actually stop you from proceeding with the download (or accessing
+    // the rest of the context menu)
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.addEventListener("mousedown", function(e) {
+        let isRightMB;
+        e = e || window.event;
+
+        if ("which" in e)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
+            isRightMB = e.which == 3; 
+        else if ("button" in e)  // IE, Opera 
+            isRightMB = e.button == 2; 
+
+        if (isRightMB) {
+            alert('Copyright 1999 Ganon (links_oracle@hotmail.com)')
+        }
+      }, false)
+    })
+
+    </script>
   </HEAD>
-  <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN">
+  <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN" height="100vh">
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="kokiri.mid" LOOP=10>
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="kokiri.mid" LOOP=10> -->
+
   <H1 ALIGN="CENTER">Items</H1>
   
   <P ALIGN="CENTER"><A HREF="#sword">Swords</A>-<A HREF="#sheild">Sheilds</A>-<A HREF="#tunic">Tunics</A>-
@@ -36,7 +80,7 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Kokiri Sword</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="kokirisword.gif" align="left" hspace="0"></font></td>
+          src="../../assets/kokirisword.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">The first sword
           you get, which is found through the hole at the top of
           the training ground in Kokiri Forest. The sword is very
@@ -45,7 +89,7 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Master Sword</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="master.gif" align="left" hspace="0"></font></td>
+          src="../../assets/master.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">You get this sword
           when you have retrieved all three spiritual stones and
           returned to the Temple of Time. You sing the Song of Time
@@ -56,7 +100,7 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Giant's Knife</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="giantknife.gif" align="left" hspace="0"></font></td>
+          src="../../assets/giantknife.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">You buy this sword
           from the Big Goron in Goron City after you've grown up.
           It is twice as powerful as the Master Sword but will
@@ -66,15 +110,26 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Biggoron's Sword</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="biggoron.gif" align="left" hspace="0"></font></td>
+          src="../../assets/biggoron.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">You get this sword
           from Biggoron on the Top of Death Mountain after you
-          finish the Adult Link's Trading Sequence (</font><a
-          href="howto.html"><font size="2" face="Zurich Ex BT">Howto</font></a><font
-          size="2" face="Zurich Ex BT">) and bring him the Claim
-          Check after 3 days. This sword is good and very useful,
-          twice as powerful as the so-called &quot;Master&quot;
-          sword.</font></td>
+          finish the Adult Link's Trading Sequence (
+            </font>
+            <!-- lol this link was broken, pointing to the wrong filename -->
+            <a href="../guides/guide.html">
+                <font size="2" face="Zurich Ex BT">Howto</font>
+            </a>
+            <!-- 
+                This additional font tag usage is so bad! 
+                It seems like this old FONT element only goes one level deep or something?
+            -->
+            <font size="2" face="Zurich Ex BT">
+                ) and bring him the Claim
+                Check after 3 days. This sword is good and very useful,
+                twice as powerful as the so-called &quot;Master&quot;
+                sword.
+            </font>
+        </td>
       </tr>
   </table>
   
@@ -90,7 +145,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Deku Sheild</font></td>
-          <td><img src="deku.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/deku.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You must by this
           shield from the guy in the Kokiri shop for 40 rupees. It
           is small and will burn when lit on fire. Can only be used
@@ -98,7 +153,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Hylian Sheild</font></td>
-          <td><img src="hylian.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/hylian.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You can find this
           sheild in the graveyard in Kakariko Village or buy it
           from the guy in Bazaar when you're a kid for 80 rupees.
@@ -106,7 +161,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Mirror Sheild</font></td>
-          <td><img src="mirror.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/mirror.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You find this
           sheild in the Spirit Temple as Adult Link. It can reflect
           light onto things and can only be used by Adult Link.
@@ -124,7 +179,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Kokiri Tunic</font></td>
-          <td><img src="kokiritunic.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/kokiritunic.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You start with
           this tunic which can be worn by Young or Adult Link.<br>
           It has no special abilities whatsoever. I just like the
@@ -132,7 +187,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Goron Tunic</font></td>
-          <td><img src="goron.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/goron.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You can buy this
           for 200 rupees at the Goron Shop or get it for free from
           the little guy rolling around Goron City when you're an
@@ -142,7 +197,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Zora Tunic</font></td>
-          <td><img src="zora.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/zora.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You can get this
           one for 300 rupees at the Zora Shop when you're a kid or
           get it for free from the King of Zoras. The Zora Tunic
@@ -159,14 +214,14 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Kokiri Boots</font></td>
-          <td><img src="kokiriboot.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/kokiriboot.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You start the game
           with these and they can be worn by Young or Adult Link.
           No special abilities.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Iron Boots</font></td>
-          <td><img src="iron.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/iron.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You get these in
           the Ice Cavern in Zora's Fountain when you're Adult Link.
           They let you sink to the bottom of ponds, lakes, etc, so
@@ -176,7 +231,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Hover Boots</font></td>
-          <td><img src="hover.gif" align="left" hspace="0"></td>
+          <td><img src="../../assets/hover.gif" align="left" hspace="0"></td>
           <td><font size="2" face="Zurich Ex BT">You get these in
           the Shadow Temple. These boots let you hover an inch
           above the ground or so, and they will let you hover in
@@ -195,35 +250,35 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Deku Nut</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="dekunut.gif" align="left" hspace="0"></font></td>
+          src="../../assets/dekunut.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">When thrown, it
           will explode in a flash of Light, blinding some enemies.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Deku Stick</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="dekustick.gif" align="left" hspace="0"></font></td>
+          src="../../assets/dekustick.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Can be used as a
           weapon that breaks when you hit something or a torch.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Fairy Slingshot</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="slingshot.gif" align="left" hspace="0"></font></td>
+          src="../../assets/slingshot.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Used to fire Deku
           Seeds at enemies and targets.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Seed Bag</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="seedbag.gif" align="left" hspace="0"></font></td>
+          src="../../assets/seedbag.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Holds all your
           Deku Seeds. Max=30-40-50</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Fairy Ocarina</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="fairyocarina.gif" align="left" hspace="0"></font></td>
+          src="../../assets/fairyocarina.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Saria gives you
           this when you leave the forest. You learn your first
           tunes on this.</font></td>
@@ -231,34 +286,34 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Bottle</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bottle.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bottle.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Used to hold
           Fairies, Letters, Fish, Bugs, etc.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Goron Bacelet</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bracelet.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bracelet.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Darunia givevs you
           this so you can pick Bomb Flowers up.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Bomb Bag</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bombbag.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bombbag.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Holds all your
           bombs. Max=30-40-50</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Bombs</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bomb.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bomb.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Used to blow up
           fake walls and doors and for killing some enemies.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Din's Fire</font></td>
-          <td><font size="2" face="Zurich Ex BT"><img src="din.gif"
+          <td><font size="2" face="Zurich Ex BT"><img src="../../assets/din.gif"
           align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A spell that
           creates a dome of fire around you and expands.</font></td>
@@ -266,35 +321,35 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Bombchus</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bombchu.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bombchu.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Bombs carried on
           mechanical mice to thier target</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Magic Beans</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bean.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bean.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Planted as a
           child, they became ridable platforms as an adult</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Farore's Wind</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="farore.gif" align="left" hspace="0"></font></td>
+          src="../../assets/farore.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Spell taht
           warped to to different spots in dungeons.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Boomerang</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="boomerang.gif" align="left" hspace="0"></font></td>
+          src="../../assets/boomerang.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Distance weapon
           used to hit enemies and retrieve objects.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Ocarina of Time</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="ocarinatime.gif" align="left" hspace="0"></font></td>
+          src="../../assets/ocarinatime.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Zelda gives you
           this to learn most of your songs and open the door of
           time.</font></td>
@@ -302,7 +357,7 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Hookshot</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="hookshot.gif" align="left" hspace="0"></font></td>
+          src="../../assets/hookshot.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Distance weapon
           used to hit enemies and retriev objects. It also can pull
           Link forward to an object.</font></td>
@@ -310,13 +365,13 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Quiver</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="quiver.gif" align="left" hspace="0"></font></td>
+          src="../../assets/quiver.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Holds all your
           arrows. Max=30-40-50</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Fairy Bow</font></td>
-          <td><font size="2" face="Zurich Ex BT"><img src="bow.gif"
+          <td><font size="2" face="Zurich Ex BT"><img src="../../assets/bow.gif"
           align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A bow used to hit
           enemies and targets.</font></td>
@@ -324,7 +379,7 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Megaton Hammer</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="hammer.gif" align="left" hspace="0"></font></td>
+          src="../../assets/hammer.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A large hammer
           that can be used to push down rusted switches and destroy
           rocks and statues. It also flips some enemies over.</font></td>
@@ -332,28 +387,28 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Longshot</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="hookshot.gif" align="left" hspace="0"></font></td>
+          src="../../assets/hookshot.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">An upgrade to the
           Hookshot.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Fire Arrows</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="firearrow.gif" align="left" hspace="0"></font></td>
+          src="../../assets/firearrow.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Magical arrow
           that explodes in a rush of fire upon impact. Uses Magic.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Lens of Truth</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="lens.gif" align="left" hspace="0"></font></td>
+          src="../../assets/lens.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Lens witch
           allows Link to see hidden objects. Uses Magic.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Ice Arrows</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="icearrow.gif" align="left" hspace="0"></font></td>
+          src="../../assets/icearrow.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Magical arrow
           that explodes in a rush of cold icy air upon impact. Uses
           Magic.</font></td>
@@ -361,7 +416,7 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Nayru's Love</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="nayru.gif" align="left" hspace="0"></font></td>
+          src="../../assets/nayru.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Spell which
           creates a diamond of protection around you. You can't
           shoot arrows or hookshot or stuff like that when its in
@@ -370,21 +425,21 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Light Arrows</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="lightarrow.gif" align="left" hspace="0"></font></td>
+          src="../../assets/lightarrow.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">A Magical arrow
           that explodes in a rush of Light upon impact. Uses Magic.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Compass</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="compass.gif" align="left" hspace="0"></font></td>
+          src="../../assets/compass.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Lets you figure
           out where you are in a room in a dungeon.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Silver Scale</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="sscale.gif" align="left" hspace="0"></font></td>
+          src="../../assets/sscale.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Lets you dive up
           to 6 meters</font></td>
       </tr>
@@ -396,7 +451,7 @@
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Map</font></td>
-          <td><font size="2" face="Zurich Ex BT"><img src="map.gif"
+          <td><font size="2" face="Zurich Ex BT"><img src="../../assets/map.gif"
           align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Shows you all the
           rooms in a dungeon, even the ones you haven't visited</font></td>
@@ -404,22 +459,48 @@
       <tr>
           <td><font size="2" face="Zurich Ex BT">Boss Key</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="bosskey.gif" align="left" hspace="0"></font></td>
+          src="../../assets/bosskey.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Allows you to
           enter the Boss Room.</font></td>
       </tr>
       <tr>
           <td><font size="2" face="Zurich Ex BT">Stone of Agony</font></td>
           <td><font size="2" face="Zurich Ex BT"><img
-          src="stoneagony.gif" align="left" hspace="0"></font></td>
+          src="../../assets/stoneagony.gif" align="left" hspace="0"></font></td>
           <td><font size="2" face="Zurich Ex BT">Vibrates your
           Rumble Pack when you are near a hidden place</font></td>
       </tr>
   </table>
-  
+  <br />
+
+  <!--
+  Gross, some kind of iFrame thing. These are so cursed.
+  I legit don't remember what this was at all.
+  -->
   <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/11/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/11/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/11/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/11/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/11/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
+  <center>
+    <!-- <iframe 
+      src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+      width=468 
+      height=60 
+      marginwidth=0 
+      marginheight=0 
+      hspace=0 
+      vspace=0 
+      frameborder=0 
+      scrolling=no
+    > -->
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+        <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+        <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+      <!-- </a> -->
+    <!-- </iframe> -->
+    <br>
+    <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+      <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+    <!-- </a> -->
+    <br>
+  </center>
   <!-- END LINKEXCHANGE CODE -->
   
   

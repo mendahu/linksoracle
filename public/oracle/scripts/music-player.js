@@ -36,16 +36,13 @@ function createMusicPlayer(filename) {
   figure.appendChild(figcaption);
   figure.appendChild(player);
 
-  return player;
+  return figure;
 }
 
 function createMusicAnnotation() {
   // Create Summary
   const summary = document.createElement("summary");
   summary.innerHTML = "Music";
-
-  // Create Line Break
-  const lineBreak = document.createElement("br");
 
   // Create Abbreviation
   const abbreviation = document.createElement("abbr");
@@ -57,14 +54,14 @@ function createMusicAnnotation() {
   details.setAttribute("class", "annotation");
   details.appendChild(summary);
   details.appendChild(document.createTextNode("Music is one of my other passions - when I made this site, I was learning guitar and drums and later went on to take music in college. So of course, any website I made would have to have auto-playing MIDI files!"))
-  details.appendChild(lineBreak)
-  details.appendChild(lineBreak)
+  details.appendChild(document.createElement("br"))
+  details.appendChild(document.createElement("br"))
   details.appendChild(document.createTextNode("I've had to make some changes to the code to get these to work today in your browser, so this doesn't look exactly like it did back then. In 1999, you would not have seen this little widget with controls and the file name - it just played on loop behind the scenes. That's a little obnoxious by today's standards, so I've at least given you controls to stop it if you're v upset."))
-  details.appendChild(lineBreak)
-  details.appendChild(lineBreak)
+  details.appendChild(document.createElement("br"))
+  details.appendChild(document.createElement("br"))
   details.appendChild(document.createTextNode("I also had to upgrade the code to modern conventions - the "))
   details.appendChild(abbreviation)
-  details.appendChild(document.createTextNode(" element I used in 1999 was a non-standard one that Microsoft was pushing and only worked in Internet Explorer. Since then, browsers have settled on a common standard. I also had to convert the files to MP3, but don't worry the original MIDI files are still available for download in the Musica section."))
+  details.appendChild(document.createTextNode(" element I used in 1999 was a non-standard one that Microsoft was pushing and only worked in Internet Explorer. Since then, browsers have settled on a common standard. I also had to convert the files to MP3, but don't worry, the original MIDI files are still available for download in the Musica section."))
 
   return details
 }
