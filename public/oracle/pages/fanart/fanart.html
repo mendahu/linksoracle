@@ -1,6 +1,23 @@
 <HTML>
   <HEAD>
-  <TITLE>Link's Oracle</TITLE><script language="JavaScript1.2">
+  <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
+  <script src="../../scripts/music-player.js"></script>
+  <script src="../../scripts/disable-right-click.js"></script>
+  <script>appendMusic("z64-windmill.mp3")</script>
+  <script language="JavaScript1.2">
+
+  /*
+  I remember implementing this, believe it or not. It came from a
+  very weird place - I didn't want people stealing the images off 
+  the site, so this would trigger an alert if you tried to right-click
+  > save anywhere in the document.
+
+  This is especially strange considering all these images are not
+  mine and were just stolen from other sites LOL. And as you can
+  see below, so was the script to prevent it!
+  */
   
   /*
   Disable right mouse click Script
@@ -8,51 +25,104 @@
   For full source code, installation instructions,
   100's more DHTML scripts, and Terms Of
   Use, visit dynamicdrive.com
-  This script last updated:99/04/05
+  This script last updated:99/04/05 (RIP)
   */
-  
-  if (document.all)
-  document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)-Pictures Copyright their owners')")
-  
+
+  // Looks like Chrome has discontinued support for onmousedown, mostly due to it
+  // being too narrow of use in a world of touch devices (this event wouldn't capture
+  // a long press).
+
+  // ORIGINAL CODE
+  // (I don't know if I've ever used the Function constructor syntax like this, it's pretty wild)
+  // if (document.all)
+  // document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)')")
+
+  // I've sort of reimplemented it here for posterity, triggering the alert.
+  // It doesn't actually stop you from proceeding with the download (or accessing
+  // the rest of the context menu)
+  disableRightClick() // disable-right-click.js
+
   </script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN" BACKGROUND="background.gif" BGPROPERTIES="FIXED">
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-windmill.mid" LOOP="10">
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="z64-windmill.mid" LOOP="10"> -->
+
   <H1 ALIGN="CENTER">Fan Art</H1>
   <HR>
+    <br />
+    <!-- Begin Annotation -->
+    <details class="annotation">
+      <summary>Silvestris</summary>
+      I called this page Fan Art but it really ended up being a Silvestris tribute page. Silvestris
+      was a talented artist who made some really great drawings of this game.
+      I think she was around my age and I remember her being very gracious about sharing her work and
+      letting me display it.<br /><br />
+      The links here were broken when I found them, so out of curiosity I went searching for her. I'm delighted
+      to learn she pursued illustration and now runs <a href="https://silvystrand.se">her own company</a> in Sweden.<br /><br />
+      I was able to find most of these images hosted around the web and have made copies here to preserve the connections.
+    </details>
+    <!-- End Annotation -->
+
   <P ALIGN="CENTER">
   <B>
+
   <A>SILVESTRIS</A><BR>
+
   This is Silvestris's view of Zelda 5<BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/darklink.jpg" TARGET="_TOP">Conquering Yourself</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/fairlight2.jpg" TARGET="_TOP">Faerie Light</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/farore2.jpg" TARGET="_TOP">Farore's Wind</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/epona2.jpg" TARGET="_TOP">Friendship</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/icecave.jpg" TARGET="_TOP">Ice Cavern</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/sheikharp.jpg" TARGET="_TOP">Strings of Gold</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/littlezora.jpg" TARGET="_TOP">The Little Zora</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/nabooru.jpg" TARGET="_TOP">The Sage of Spirit</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/shadsage.jpg" TARGET="_TOP">The Sage of Shadow</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/sarsage.jpg" TARGET="_TOP">The Sage of Forest</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/ruto.jpg" TARGET="_TOP">The Sage of Water</A><BR>
+  <A HREF="conquer_yourself.jpg">Conquering Yourself</A><BR>
+  <A HREF="faerie_light.jpg">Faerie Light</A><BR>
+  <A HREF="farores_wind.jpg">Farore's Wind</A><BR>
+  <A HREF="friendship.jpg">Friendship</A><BR>
+  <A HREF="icecavern.jpg">Ice Cavern</A><BR>
+  <A HREF="strings_of_gold.jpg">Strings of Gold</A><BR>
+  <A HREF="the_little_zora.jpg">The Little Zora</A><BR>
+  <A HREF="the_sage_of_spirit.jpg">The Sage of Spirit</A><BR>
+  <A HREF="the_sage_of_shadow.jpg">The Sage of Shadow</A><BR>
+  <A HREF="the_sage_of_forest.jpg">The Sage of Forest</A><BR>
+  <A HREF="the_sage_of_water.jpg">The Sage of Water</A><BR>
   This is what Silvestris wants in Zelda 6<BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/sheikahc.jpg" TARGET="_TOP">Sheikah Sorceress</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/nera.jpg" TARGET="_TOP">Saria's Fairy</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/arawn2c.jpg" TARGET="_TOP">Arawn, a new Boss</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/dragsorc.jpg" TARGET="_TOP">The Dragon Sorceress</A><BR>
-  <A HREF="http://w1.404.telia.com/~u40405646/zelda/waterwiz.jpg" TARGET="_TOP">The Water Wizard</A><BR>
+  Sheikah Sorceress (Broken)<BR>
+  Saria's Fairy (Broken)<BR>
+  Arawn, a new Boss (Broken)<BR>
+  The Dragon Sorceress (Broken)<BR>
+  The Water Wizard (Broken)<BR>
   </P>
   <HR>
-  <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/25/X1034640/showiframe?" width=468 height=60 
-  marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/25/X1034640/clickle" target="_top"><img width=468 
-  height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/25/X1034640/showle?"></a>
-  </iframe><br><a href="http://leader.linkexchange.com/25/X1034640/clicklogo" target="_top">
-  <img src="http://leader.linkexchange.com/25/X1034640/showlogo?" width=468 height=16 border=0 
-  ismap alt=""></a><br></center>
-  <!-- END LINKEXCHANGE CODE -->
+    <br />
+
+    <!--
+    Gross, some kind of iFrame thing. These are so cursed.
+    I legit don't remember what this was at all.
+    -->
+    <!-- BEGIN LINKEXCHANGE CODE --> 
+    <center>
+      <!-- <iframe 
+        src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+        width=468 
+        height=60 
+        marginwidth=0 
+        marginheight=0 
+        hspace=0 
+        vspace=0 
+        frameborder=0 
+        scrolling=no
+      > -->
+        <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+          <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+          <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+        <!-- </a> -->
+      <!-- </iframe> -->
+      <br>
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+        <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+      <!-- </a> -->
+      <br>
+    </center>
+    <!-- END LINKEXCHANGE CODE -->
   <HR>
   <P ALIGN="CENTER"><A HREF="infoside.html">Back Home</A></P>
   </FONT>
