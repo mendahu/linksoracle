@@ -14,4 +14,4 @@ The original source code, as best as I was able to recover it, is in `/original`
 
 ## Cleaned up site
 
-The cleaned up site is available in `/oracle` (and via [https://linksoracle.com/oracle/oracle.html](https://linksoracle.com/oracle/oracle.html))
+The cleaned up site is available in `/oracle` (and via [https://linksoracle.com/oracle/](https://linksoracle.com/oracle/))
