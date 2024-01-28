@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="../../styles/annotations.css" />
     <link rel="stylesheet" href="../../styles/music-player.css" />
     <script src="../../scripts/music-player.js"></script>
+    <script src="../../scripts/disable-right-click.js"></script>
     <script>appendMusic("z64-kokiri.mp3")</script>
     <script language="JavaScript1.2">
 
@@ -39,21 +40,7 @@
     // I've sort of reimplemented it here for posterity, triggering the alert.
     // It doesn't actually stop you from proceeding with the download (or accessing
     // the rest of the context menu)
-    document.addEventListener("DOMContentLoaded", function() {
-      document.body.addEventListener("mousedown", function(e) {
-        let isRightMB;
-        e = e || window.event;
-
-        if ("which" in e)  // Gecko (Firefox), WebKit (Safari/Chrome) & Opera
-            isRightMB = e.which == 3; 
-        else if ("button" in e)  // IE, Opera 
-            isRightMB = e.button == 2; 
-
-        if (isRightMB) {
-            alert('Copyright 1999 Ganon (links_oracle@hotmail.com)')
-        }
-      }, false)
-    })
+    disableRightClick() // disable-right-click.js
 
     </script>
   </HEAD>
