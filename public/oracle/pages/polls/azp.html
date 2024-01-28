@@ -1,124 +1,149 @@
 <HTML>
   <HEAD>
-  <TITLE>Link's Oracle</TITLE>
+    <TITLE>Link's Oracle</TITLE>
+    <link rel="stylesheet" href="../../styles/annotations.css" />
+    <link rel="stylesheet" href="../../styles/music-player.css" />
+    <script src="../../scripts/music-player.js"></script>
+    <script>
+      appendMusic("z64-owl.mp3")
+    </script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN" BACKGROUND="background.gif" BGPROPERTIES="FIXED">
-  <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-owl.mid" LOOP=10>
+  <FONT FACE="Zurich" SIZE="2.5">
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="z64-owl.mid" LOOP=10> -->
+
   <H1 ALIGN="CENTER">The Average Zelda Player</H1>
   <p>Please take some of the polls below and tell us who you are. After 2 weeks, I will close the polls and give you
   the inside scoop on the Average Zelda Player.</p>
+
+  <!-- Begin Annotation -->
+  <details class="annotation">
+    <summary>Poll</summary>
+    Another service I seemed to have used which took the form submissions
+    and aggregated results for me. The good news on this one is that they made
+    you host your own form elements, so we can still see the questions and options
+    and everything. The bad news is, of course, the site behind it is long gone, so I've 
+    disabled the actual form submission links.<br /><br />
+    It's too bad; I'd have loved to see the results of these polls!
+  </details>
+  <!-- End Annotation -->
+
   <hr>
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br>
+  <!-- <form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp"> -->
+  <form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="96131201">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>How old are you?</b></font><br><select name=poll><option value=1>5-10<option value=2>11-20<option value=3>21-40<option value=4>41-60<option value=5>60+</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=96131201">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br>  <form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="961312810">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Are you Male or Female?</b></font><br><select name=poll><option value=1>Male<option value=2>Female</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=961312810">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br>  <form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="931123546">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Which Zelda Game is your Favorite?</b></font><br><select name=poll><option value=1>The Legend of Zelda<option value=2>The Legend of Zelda: Link's Adventures<option value=3>The Legend of Zelda: Link to the Past<option value=4>The Legend of Zelda: Link's Awakening (Also DX)<option value=5>The Legend of Zelda: Ocarina of Time</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=931123546">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br><form>
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="931162635">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Who is your favorite Character?</b></font><br><select name=poll><option value=1>Link<option value=2>Ganondorf / Ganon<option value=3>Princess Zelda<option value=4>Rauru<option value=5>Kaepora Gaebora</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=931162635">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br>  <form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="947152824">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Have you beaten Zelda I?</b></font><br><select name=poll><option value=1>Yes<option value=2>No</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=947152824">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br>  <form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="9471679">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Have you beaten Zelda II?</b></font><br><select name=poll><option value=1>Yes<option value=2>No</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=9471679">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br> <form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="94716926">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Have you beaten Zelda III?</b></font><br><select name=poll><option value=1>Yes<option value=2>No</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=94716926">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br><form onsubmit="event.preventDefault()">
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="94716182">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Have you beaten Zelda IV?</b></font><br><select name=poll><option value=1>Yes<option value=2>No</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=94716182">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <!-- Begin Poll Code --> 
   
-  <br><br><form method="get" action="http://apps6.vantagenet.com/zpolls/count.asp">
+  <br><br><form onsubmit="event.preventDefault()"></form>
   <input type="hidden" name="ptype" value="3"><input type="hidden" name="id" value="947162526">
   <table width="468" cellpadding= "3" cellspacing="0" border="1">
   <tr><td  bgcolor="#006633"  width="125"><center><font size="1" color="#ffcc00" face="Verdana" ><b>The Zelda Player Poll</b></font>
   </center></td><td  bgcolor="#FFFFCC"  width="238" valign="top">
   <font color="#000000" size= "1" face="Verdana" ><b>Have you beaten Zelda V (64)?</b></font><br><select name=poll><option value=1>Yes<option value=2>No</select></td>
-  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a href="http://apps6.vantagenet.com/zpolls/count.asp?id=947162526">Current Results</a></font></center>
+  <td  bgcolor="#FFFFCC"  width="105" valign="top"><center><input type="submit" value="Submit Vote"><br><font size="1" color="#000000" face="Verdana" ><a>Current Results</a></font></center>
   </td></tr></table></form>
   
    <!-- End Poll Code -->
   <hr>
-  <center><a href="infoside.html">Back Home</a>
+  <center><a href="../home/infoside.html">Back Home</a>
   </font>
   </body>
   </html>

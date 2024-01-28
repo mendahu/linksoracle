@@ -1,12 +1,23 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN" BACKGROUND="background.gif" BGPROPERTIES="FIXED">
   
-  <FONT FACE="Zurich Ex BT" SIZE="2.5">
+  <FONT FACE="Zurich" SIZE="2.5">
   <H1 ALIGN="CENTER">Link's Oracle Chat</H1>
-  <APPLET code="GUIClient.class" Archive="multichat.zip" codebase="http://www.multichat.com/ChatBox" align="baseline" width="562" height="385"> 
+
+  <!-- 
+  now here's some weird stuff!
+
+  This <APPLET> element was used to run actual Java code inside of a browser via a plugin.
+  That sounds crazy by today's standard, and it rightfully went away very soon after
+  it was introduced (HTML 4.01 deprecated it later in 1999).
+
+  Looks like it would download some code (GUIClient.class) and run it in a nested execution environment.
+  -->
+  <!-- <APPLET code="GUIClient.class" Archive="multichat.zip" codebase="http://www.multichat.com/ChatBox" align="baseline" width="562" height="385"> 
             <PARAM name="Category" value="4"> 
             <PARAM name="Language" value="EN"> 
   <PARAM name="Subject" value="Chat About Zelda 64 and Link's Oracle!!"> 
@@ -16,15 +27,32 @@
   <PARAM name="ChatAreaForeground" value="green">
   <PARAM name="ChatAreaBackground" value="black">
   <PARAM name="HomepageURL" value="http://www.multichat.com"> 
+  </APPLET>  -->
   <blockquote>
   <hr>
   Your browser does not support Java applet. Upgrade to a newer browser or use the Options menu to enable Java.
   </hr>
   </blockquote>
-  </APPLET> 
+
+  <!-- Begin Annotation -->
+  <details class="annotation">
+    <summary>Chat</summary>
+    "Your browser does not support Java applet" appears for good reason - this technology existed for but
+    a brief moment at the end of the 1990s - it was introduced and deprecated in the same HTML release!<br /><br />
+    But this is what it sounded like! A live chat application right here on the site. I don't know if anyone
+    ever was able to talk to someone else on it, but it theoretically could do that. It was all someone else's code,
+    from a service called MultiChat. 
+  </details>
+  <!-- End Annotation -->
+
    <br>
-  <center><a href="http://www.multichat.com"><img src="http://www.multisoftcorp.com/images/powered.gif" alt="Powered by MultiChat" width="88" height="31"></a></center>
-  <center><a href="infoside.html">Back Home</a></center>
+  <center>
+    <!-- <a href="http://www.multichat.com"> -->
+      <!-- <img src="http://www.multisoftcorp.com/images/powered.gif" alt="Powered by MultiChat" width="88" height="31"> -->
+      <img src="" alt="Powered by MultiChat" width="88" height="31">
+    <!-- </a> -->
+  </center>
+  <center><a href="../home/infoside.html">Back Home</a></center>
   </font>
   </body>
   </html>
