@@ -1,11 +1,30 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
+  <script src="../../scripts/music-player.js"></script>
+  <script>appendMusic("z64-hyrulefield.mp3")</script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN">
   
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-hyrulefield.mid" LOOP="10">
+
+      <!-- Begin Annotation -->
+      <div style="display:flex;width:100%;justify-content:center;">
+      <details class="annotation">
+        <summary>Missing Files</summary>
+        This particular midi music file playing was actually missing from the source
+        code when I was going through this. Luckily, some quick searching found the original
+        and I've restored it!
+      </details>
+    </div>
+      <!-- End Annotation -->
+
+      <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="z64-hyrulefield.mid" LOOP="10"> -->
+
   <H1 ALIGN="CENTER">Hyrule Castle</H1>
   <HR>
   <P>

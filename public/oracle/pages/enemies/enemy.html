@@ -1,30 +1,66 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
+  <script src="../../scripts/music-player.js"></script>
+  <script src="../../scripts/disable-right-click.js"></script>
+  <script>appendMusic("z64-ganon.mp3")</script>
   <script language="JavaScript1.2">
-  
-  /*
-  Disable right mouse click Script
-  � Dynamic Drive (www.dynamicdrive.com)
-  For full source code, installation instructions,
-  100's more DHTML scripts, and Terms Of
-  Use, visit dynamicdrive.com
-  This script last updated:99/04/05
-  */
-  
-  if (document.all)
-  document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)')")
-  
-  </script>
+
+    /*
+    I remember implementing this, believe it or not. It came from a
+    very weird place - I didn't want people stealing the images off 
+    the site, so this would trigger an alert if you tried to right-click
+    > save anywhere in the document.
+
+    This is especially strange considering all these images are not
+    mine and were just stolen from other sites LOL. And as you can
+    see below, so was the script to prevent it!
+    */
+    
+    /*
+    Disable right mouse click Script
+    � Dynamic Drive (www.dynamicdrive.com)
+    For full source code, installation instructions,
+    100's more DHTML scripts, and Terms Of
+    Use, visit dynamicdrive.com
+    This script last updated:99/04/05 (RIP)
+    */
+
+    // Looks like Chrome has discontinued support for onmousedown, mostly due to it
+    // being too narrow of use in a world of touch devices (this event wouldn't capture
+    // a long press).
+
+    // ORIGINAL CODE
+    // (I don't know if I've ever used the Function constructor syntax like this, it's pretty wild)
+    // if (document.all)
+    // document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)')")
+
+    // I've sort of reimplemented it here for posterity, triggering the alert.
+    // It doesn't actually stop you from proceeding with the download (or accessing
+    // the rest of the context menu)
+    disableRightClick() // disable-right-click.js
+
+    </script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="GREEN" VLINK="YELLOW">
     
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-ganon.mid" LOOP=10>
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="z64-ganon.mid" LOOP=10> -->
+
   <H1 ALIGN="CENTER">Enemy</H1>
   <HR>
   <P ALIGN="LEFT">Here is a list of most or all of the enemies in Zelda64 (I'm not sure) and how to kill them.</P>
   <HR>
+  <!--
+    It's interesting to see how so much of this site's code has crumbled with time, and yet how
+    some of it is exactly relevant. These anchor links to take you down page are fully in
+    spec today, and I have used this type of thing within the last year as of 2024. 
+  -->
   <P ALIGN="CENTER"><A HREF="#a">A</A>-<A HREF="#b">B</A>-C-<A HREF="#d">D</A>-E-<A HREF="#f">F</A>-
   <A HREF="#g">G</A>-H-I-J-<A HREF="#k">K</A>-<A HREF="#l">L</A>-<A HREF="#m">M</A>-N-
   <A HREF="#o">O</A>-<A HREF="#p">P</A>-Q-<A HREF="#r">R</A>-<A HREF="#s">S</A>-<A HREF="#t">T</A>-
@@ -34,44 +70,44 @@
   <P ALIGN="LEFT">
     Anubis- This is a weird guy that floats.  Use only Fire Arrows or Din's Fire. They are 
     in the Spirit Temple.<BR><BR><BR><BR>
-  <IMG SRC="armos.jpg" ALIGN="LEFT">Armos- Living statues. These guys succomb to bombs and sword 
+  <IMG SRC="../../assets/armos.jpg" ALIGN="LEFT">Armos- Living statues. These guys succomb to bombs and sword 
     slices when not moving. Get them to return to their spot and give it to em'.<BR><BR><BR><BR><BR>
   <P ALIGN="CENTER"><A NAME="b">B</A></P>
-  <IMG SRC="bari.jpg" ALIGN="LEFT">Bari- Big jellyfish that fall from the ceiling when you walk under them.
+  <IMG SRC="../../assets/bari.jpg" ALIGN="LEFT">Bari- Big jellyfish that fall from the ceiling when you walk under them.
     They'll spin around and hurt you. Use the boomerang or get zapped.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="beamos.jpg" ALIGN="LEFT">Beamos- These guys don't move but thier head spins around and the one eye 
+  <IMG SRC="../../assets/beamos.jpg" ALIGN="LEFT">Beamos- These guys don't move but thier head spins around and the one eye 
     will shoot a laser at you. You can block the laser if you have the Mirror Sheild. To kill,
     throw bombs at it.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="biri.jpg" ALIGN="LEFT">Biri- These are smaller jellyfish floating around in Jabu-Jabu's Belly.
+  <IMG SRC="../../assets/biri.jpg" ALIGN="LEFT">Biri- These are smaller jellyfish floating around in Jabu-Jabu's Belly.
     You have to use the boomerang on them or they will zap you.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="bluebubble.jpg" ALIGN="LEFT">Bubble (blue)- This guy is a flaming, flying, skull. Use your sheild and
+  <IMG SRC="../../assets/bluebubble.jpg" ALIGN="LEFT">Bubble (blue)- This guy is a flaming, flying, skull. Use your sheild and
     when he hits, his fire will go away and then you can cut his head to pieces.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="greenbubble.jpg" ALIGN="LEFT">Bubble (green)- This is the same as the previous but is twice as weak.
+  <IMG SRC="../../assets/greenbubble.jpg" ALIGN="LEFT">Bubble (green)- This is the same as the previous but is twice as weak.
     Use the same techniques while fighting blue bubbles.<BR><BR><BR><BR><BR><BR><BR>
-  <IMG SRC="redbubble.jpg" ALIGN="LEFT">Bubble (red)- These are a little different.  They live in lava and jump out at you.
+  <IMG SRC="../../assets/redbubble.jpg" ALIGN="LEFT">Bubble (red)- These are a little different.  They live in lava and jump out at you.
     You don't have to fight them, just run past them.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="whitebubble.jpg" ALIGN="LEFT">Bubble (white)- Use the same techniques as the blue and green bubbles.<BR><BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/whitebubble.jpg" ALIGN="LEFT">Bubble (white)- Use the same techniques as the blue and green bubbles.<BR><BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER">C-None</P>
   <P ALIGN="CENTER"><A NAME="d">D</A></P>
-  <IMG SRC="dekubaba.jpg" ALIGN="LEFT">Deku Baba- These are like venus fly traps. They will lash out at you
+  <IMG SRC="../../assets/dekubaba.jpg" ALIGN="LEFT">Deku Baba- These are like venus fly traps. They will lash out at you
     but since they're plants, they can't get far.  Just hit its mouth when it strikes
     and then hit his stem. You can also wait and hit his head again. They will drop nuts or sticks.<BR><BR><BR><BR>
-  <IMG SRC="bigdekubaba.jpg" ALIGN="LEFT">Deku Baba (big)- Same as the small ones but 3 times your size.  Use the same techniques
+  <IMG SRC="../../assets/bigdekubaba.jpg" ALIGN="LEFT">Deku Baba (big)- Same as the small ones but 3 times your size.  Use the same techniques
     as with the little guys.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="dinalfos.jpg" ALIGN="LEFT">Dinoflos- These are only found in Ganon's Castle in the tower and in Gerudo Training Ground.  Use Z-targeting and do a jump
+  <IMG SRC="../../assets/dinalfos.jpg" ALIGN="LEFT">Dinoflos- These are only found in Ganon's Castle in the tower and in Gerudo Training Ground.  Use Z-targeting and do a jump
     -attack when its about to strike. They like to jump around and do a slice on your back.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="dodongo.jpg" ALIGN="LEFT">Dodongo- These lizards are a pain.  You can either throw bombs in his mouth when
+  <IMG SRC="../../assets/dodongo.jpg" ALIGN="LEFT">Dodongo- These lizards are a pain.  You can either throw bombs in his mouth when
     he opens it to breath fire or use Z-targeting and slice his tail.  If your really lazy, just use your slingshot
     and waste your seeds. When they die, they blow up.<BR><BR><BR><BR>
-  <IMG SRC="dlarva.jpg" ALIGN="LEFT">Dodongo Larvae- These little critters pop out of the ground and
+  <IMG SRC="../../assets/dlarva.jpg" ALIGN="LEFT">Dodongo Larvae- These little critters pop out of the ground and
     charge at you. Just show him your sword and what it can do and he'll be off to hell. These
     guys blow up when they die, too.<BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER">E-None</P>
   <P ALIGN="CENTER"><A NAME="f">F</A></P>
-  <IMG SRC="fakedoor.jpg" ALIGN="LEFT">Fake Door- These doors diguise themselves as real doors and when you try
+  <IMG SRC="../../assets/fakedoor.jpg" ALIGN="LEFT">Fake Door- These doors diguise themselves as real doors and when you try
     to open them, they wobble around and fall on you. You always know a fake door because
     it sticks out of the wall a bit. Just put a bomb in front of them.<BR><BR><BR><BR>
-  <IMG SRC="floormaster.jpg" ALIGN="LEFT">Floor Master- These nasty little sons of bitches are a pain.
+  <IMG SRC="../../assets/floormaster.jpg" ALIGN="LEFT">Floor Master- These nasty little sons of bitches are a pain.
     Some of these guys will split into 3 small hands that you have to kill right away or they
     become a big one again. Some are also invisible and you must use the lens of truth. Just slice them.<BR><BR><BR><BR>
   Freezzard- Thes are big statues that blow ice and freeze you. You have to slice them three times in a row or
@@ -80,90 +116,116 @@
   Gerudo Guard- The chicks in the fortress when you're saving the carpenters. Use the same techniques
     as when your fighting Lizalflos, Dinolfos, Wolfos, and Stalfos.<BR><BR><BR><BR>
   Gibdo- These are like Redead except they're mummies. Just slice them or freeze them with Sun Song.<BR><BR><BR><BR>
-  <IMG SRC="glarva.jpg" ALIGN="LEFT">Gohma Larva- These guys are in the room before Gohma and in Gohma herself. 
+  <IMG SRC="../../assets/glarva.jpg" ALIGN="LEFT">Gohma Larva- These guys are in the room before Gohma and in Gohma herself. 
     They try to jump at you, just hit them twice with a Kokiri sword. You can also kill them before they hatch.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="goldskulltula.gif" ALIGN="LEFT">Gold Skulltula. You gat tokens for killing them and you exchange tokens for good
+  <IMG SRC="../../assets/goldskulltula.gif" ALIGN="LEFT">Gold Skulltula. You gat tokens for killing them and you exchange tokens for good
     stuff. They don't really have an attack. You just hit them and grab your token.<BR><BR><BR><BR>
-  <IMG SRC="guay.jpg" ALIGN="LEFT">Guay- These birds appear at lake Hylia and the Desert Colossus and other spots.
+  <IMG SRC="../../assets/guay.jpg" ALIGN="LEFT">Guay- These birds appear at lake Hylia and the Desert Colossus and other spots.
     They swoop down like Keese and you slice them.<BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER">H-None</P>
   <P ALIGN="CENTER">I-None</P>
   <P ALIGN="CENTER">J-None</P>
   <P ALIGN="CENTER"><A NAME="k">K</A></P>
-  <IMG SRC="keese.jpg" ALIGN="LEFT">Keese of Fire and Ice- These are bats that swoop at you. Just slice them.
+  <IMG SRC="../../assets/keese.jpg" ALIGN="LEFT">Keese of Fire and Ice- These are bats that swoop at you. Just slice them.
     When the Fire ones hit you you burn. When the Ice ones hit you, you freeze. Simple.<BR><BR><BR><BR>
   <P ALIGN="CENTER"><A NAME="l">L</A></P>
-  <IMG SRC="leever.jpg" ALIGN="LEFT">Leever- These guys are annoying. They pop out in groups of like 6 and charge at you.
+  <IMG SRC="../../assets/leever.jpg" ALIGN="LEFT">Leever- These guys are annoying. They pop out in groups of like 6 and charge at you.
     If you kill alot at a time, a big blue one comes out.<BR><BR><BR><BR><BR><BR>
   Like-Like- These guys suck. They swallow you and eat your sheilds and tunics and swords and stuff. I like you use the Hookshot/Longshot
     to freeze them and pull you to them and slice, then repeat.<BR><BR><BR><BR>
-  <IMG SRC="lizalfos.jpg" ALIGN="LEFT">Lizalfos- These guys are easier than Dinolfos.  Just use the same technique.<BR><BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/lizalfos.jpg" ALIGN="LEFT">Lizalfos- These guys are easier than Dinolfos.  Just use the same technique.<BR><BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER"><A NAME="m">M</A></P>
-  <IMG SRC="moblin.jpg" ALIGN="LEFT">Moblin- These guys are mean. If they see you, they will spear you and send ya flying.
+  <IMG SRC="../../assets/moblin.jpg" ALIGN="LEFT">Moblin- These guys are mean. If they see you, they will spear you and send ya flying.
     You have to wait until they're backs are turned and send a hookshot/longshot into
     their backs.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="clubmoblin.jpg" ALIGN="LEFT">Moblin (Club)- This guy gards the Forest Temple and has a
+  <IMG SRC="../../assets/clubmoblin.jpg" ALIGN="LEFT">Moblin (Club)- This guy gards the Forest Temple and has a
     big club. He sends shockwaves at you and hits you with it. Just run past him and he won't turn around.
     So just give him a reason to get a band-aid. When he dies, all this fire melts him away and
     if you stand in it, its really cool.<BR><BR><BR><BR>
   <P ALIGN="CENTER">N-None</P>
   <P ALIGN="CENTER"><A NAME="o">O</A></P>
-  <IMG SRC="octurok.jpg" ALIGN="LEFT">Octorok- These guys pop out of water and shoot rocks at you. 
+  <IMG SRC="../../assets/octurok.jpg" ALIGN="LEFT">Octorok- These guys pop out of water and shoot rocks at you. 
     Just use your Deku or Hylian sheild to bounce them back and hit them with it.<BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER"><A NAME="p">P</A></P>
-  <IMG SRC="peahat.jpg" ALIGN="LEFT">Peahat- These large pinnapple-like creatures emerge from the ground and 
+  <IMG SRC="../../assets/peahat.jpg" ALIGN="LEFT">Peahat- These large pinnapple-like creatures emerge from the ground and 
     spin their bug blades at you. 6 deku Seeds will do it or Just run away.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="plarva.jpg" ALIGN="LEFT">Peahat Larva- If you're dumb enough to stay, these larva emerge from the Peahat.
+  <IMG SRC="../../assets/plarva.jpg" ALIGN="LEFT">Peahat Larva- If you're dumb enough to stay, these larva emerge from the Peahat.
     They come in three's and fly over you. Its hard to kill them so just duck with your sheild and wait for them to go away.
     Or run.<BR><BR><BR><BR>
-  <IMG SRC="poe.jpg" ALIGN="LEFT">Poe- These ghosts are everywhere and disappear alot. Just chop.<BR><BR><BR><BR><BR><BR><BR>
-  <IMG SRC="poe.jpg" ALIGN="LEFT">Poe (big)- These Poes are in Hyrule Field and run away when they see you. To kill them,
+  <IMG SRC="../../assets/poe.jpg" ALIGN="LEFT">Poe- These ghosts are everywhere and disappear alot. Just chop.<BR><BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/poe.jpg" ALIGN="LEFT">Poe (big)- These Poes are in Hyrule Field and run away when they see you. To kill them,
     You must hop on Epona and cahse them down with your bow and arrow. If you bring ten Big Poe 
     spirits back to the ghost hunter in the market, he'll give you a bottle.<BR><BR><BR><BR>
   <P ALIGN="CENTER">Q-None</P>
   <P ALIGN="CENTER"><A NAME="r">R</A></P>
-  <IMG SRC="redead.jpg" ALIGN="LEFT">ReDead- These guys are everywhere! Just freeze them with your Sun Song
+  <IMG SRC="../../assets/redead.jpg" ALIGN="LEFT">ReDead- These guys are everywhere! Just freeze them with your Sun Song
     and bring it to them.<BR><BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER"><A NAME="s">S</A></P>
-  <IMG SRC="shabom.jpg" ALIGN="LEFT">Shabom- These are bubbles. Use your boomerang or they'll zap you.<BR><BR><BR><BR><BR><BR><BR>
-  <IMG SRC="clam.jpg" ALIGN="LEFT">Shell Blade- These guys appear under water. When they open their mouth, hookshot/longshot
+  <IMG SRC="../../assets/shabom.jpg" ALIGN="LEFT">Shabom- These are bubbles. Use your boomerang or they'll zap you.<BR><BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/clam.jpg" ALIGN="LEFT">Shell Blade- These guys appear under water. When they open their mouth, hookshot/longshot
     their muscle.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="skull.jpg" ALIGN="LEFT">Skullwalltula- These are easy spiders. Just slice, or shoot or chuck somethin at em'.<BR><BR><BR><BR><BR><BR><BR>
-  <IMG SRC="bigskull.jpg" ALIGN="LEFT">Skulltula (big)- These are big skulltulas that spin around. Hit their belly, or hookshot/longshot
+  <IMG SRC="../../assets/skull.jpg" ALIGN="LEFT">Skullwalltula- These are easy spiders. Just slice, or shoot or chuck somethin at em'.<BR><BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/bigskull.jpg" ALIGN="LEFT">Skulltula (big)- These are big skulltulas that spin around. Hit their belly, or hookshot/longshot
     them anywhere.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="spikeball.jpg" ALIGN="LEFT">Spike Balls- These little critters are in the Water Temple. Hit them with your sheild sword or Hookshot/Longshot,
+  <IMG SRC="../../assets/spikeball.jpg" ALIGN="LEFT">Spike Balls- These little critters are in the Water Temple. Hit them with your sheild sword or Hookshot/Longshot,
     and they will curl up into a soft ball. Destroy.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="stalchild.jpg" ALIGN="LEFT">Stalchild- These guys pop out of the ground in hyrule field at night, as a child and attack you. 
+  <IMG SRC="../../assets/stalchild.jpg" ALIGN="LEFT">Stalchild- These guys pop out of the ground in hyrule field at night, as a child and attack you. 
     Just slice and dice.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="stalfos.jpg" ALIGN="LEFT">Stalfos- The hardest, but the most fun to play with.  These skeleton guards use realistic fighting techniques on you.
+  <IMG SRC="../../assets/stalfos.jpg" ALIGN="LEFT">Stalfos- The hardest, but the most fun to play with.  These skeleton guards use realistic fighting techniques on you.
     when you attack at the wrong time, it will block you.  Wait til he lets his guard down to slice you and do a Z-targeted jump attack. If you roll under
     his jump attack and hit his back, you'll do more damage. Try using bombs or a spin attack. These guys are good practice.<BR><BR>
   Stinger-  These guys live in water and dive bomb you when they jump out. Try to lure them out and then shoot or throw something at it or do a jump attack.<BR><BR><BR><BR>
   <P ALIGN="CENTER"><A NAME="t">T</A></P>
-  <IMG SRC="tektite.jpg" ALIGN="LEFT">Tektite- These guys are around in alot of places.  Just use your sword upon them. One shot from a master sword should do it.<BR><BR><BR><BR><BR><BR>
-  <IMG SRC="bluetektite.jpg" ALIGN="LEFT">Tektite (Blue)- These are usually near water and are twice as strong as the Tektites. Use your sword again.<BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/tektite.jpg" ALIGN="LEFT">Tektite- These guys are around in alot of places.  Just use your sword upon them. One shot from a master sword should do it.<BR><BR><BR><BR><BR><BR>
+  <IMG SRC="../../assets/bluetektite.jpg" ALIGN="LEFT">Tektite (Blue)- These are usually near water and are twice as strong as the Tektites. Use your sword again.<BR><BR><BR><BR><BR><BR>
   Tentacle- Found in Jabu-Jabu's Belly, these long tentacles hang from the ceiling and when you approach them, come down to attack you. When this happens, Z-target and throw
   ye old boomerang.<BR><BR><BR><BR>
   Tiles- These tiles come out of the floor and spin into you. Just block them with your sheild and they will explode.<BR><BR><BR><BR>
-  <IMG SRC="torchslug.jpg" ALIGN="LEFT">Torch Slug- In the fire temple, these punks lunge around. Just hit em' with your sword and
+  <IMG SRC="../../assets/torchslug.jpg" ALIGN="LEFT">Torch Slug- In the fire temple, these punks lunge around. Just hit em' with your sword and
   they will lose their fire, then just destroy using your sword.<BR><BR><BR><BR><BR><BR>
   <P ALIGN="CENTER">U-None</P>
   <P ALIGN="CENTER">V-None</P>
   <P ALIGN="CENTER"><A NAME="w">W</A></P>
-  <IMG SRC="wallmaster.jpg" ALIGN="LEFT">Well Master- These guys are one of the most annoying creatures in the game.  They hang from the ceiling and if you walk under them, they will fall, slowly and grab
+  <IMG SRC="../../assets/wallmaster.jpg" ALIGN="LEFT">Well Master- These guys are one of the most annoying creatures in the game.  They hang from the ceiling and if you walk under them, they will fall, slowly and grab
     you, if you don't frantically run about doing rolls and flips. If they do get you, you die instantly. When they come down,
     just dodge them and when they hit, slice them before they go back up.<BR><BR><BR><BR>
-  <IMG SRC="wolfos.jpg" ALIGN="LEFT">Wolfos- These guys are fun to fight. They run around you and try to litterally hit you with their paw.
+  <IMG SRC="../../assets/wolfos.jpg" ALIGN="LEFT">Wolfos- These guys are fun to fight. They run around you and try to litterally hit you with their paw.
     use Z-targeting techniques and hit right before they do, otherwise they'll block the attack.<BR><BR><BR><BR><BR><BR>
   Ice Wolfos- Same as previous, but these ones are bigger and white.<BR><BR><BR><BR>
   <P ALIGN="CENTER">X-None</P>
   <P ALIGN="CENTER">Y-None</P>
   <P ALIGN="CENTER">Z-None</P>
   <HR>
-  <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/7/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/7/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/7/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/7/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/7/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
-  <!-- END LINKEXCHANGE CODE -->
+    <br />
+    <!--
+    Gross, some kind of iFrame thing. These are so cursed.
+    I legit don't remember what this was at all.
+    -->
+    <!-- BEGIN LINKEXCHANGE CODE --> 
+    <center>
+      <!-- <iframe 
+        src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+        width=468 
+        height=60 
+        marginwidth=0 
+        marginheight=0 
+        hspace=0 
+        vspace=0 
+        frameborder=0 
+        scrolling=no
+      > -->
+        <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+          <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+          <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+        <!-- </a> -->
+      <!-- </iframe> -->
+      <br>
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+        <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+      <!-- </a> -->
+      <br>
+    </center>
+    <!-- END LINKEXCHANGE CODE -->
   <HR>
   <P ALIGN="CENTER"><A HREF="infoside.html">Back Home</A></P>
   </body>
