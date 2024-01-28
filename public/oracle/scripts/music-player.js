@@ -1,3 +1,7 @@
+function trimFileExtension(filename) {
+  return filename.slice(0, -4);
+}
+
 function createMusicPlayer(filename) {
 
   /**
@@ -28,7 +32,7 @@ function createMusicPlayer(filename) {
 
   // Create Figcaption
   const figcaption = document.createElement("figcaption");
-  figcaption.innerHTML = "Music: " + filename + " (converted to MP3)";
+  figcaption.innerHTML = "Music: " + trimFileExtension(filename)  + ".mid (converted to MP3)";
 
   // Create Figure
   const figure = document.createElement("figure");

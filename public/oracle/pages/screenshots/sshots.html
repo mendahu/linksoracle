@@ -1,11 +1,19 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
+  <script src="../../scripts/music-player.js"></script>
+  <script>appendMusic("z64-lostwood.mp3")</script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="GREEN" VLINK="YELLOW" BACKGROUND="background.gif" BGPROPERTIES="FIXED">
   
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-lostwood.mid" LOOP=10>
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="z64-lostwood.mid" LOOP=10> -->
+
   <H1 ALIGN="CENTER">Screen Shots</H1>
   <HR>
   <P ALIGN="LEFT">Welcome to the Screen Shot Gallery where all the screenshots
@@ -14,6 +22,16 @@
   you will be able to find the place you want to see faster. Enjoy. Oh, by the way, feel free
   to take any pictures you want, most of them aren't mine and if they were, I'd
   still let you keep them.</P>
+
+  <!-- Begin Annotation -->
+  <details class="annotation">
+    <summary>Sharing</summary>
+    A stunning reversal in copyright policy as compared to the <a href="../items/items.html">pages</a> where 
+    I used JavaScript to prevent you from stealing the images that I 
+    stole first!
+  </details>
+  <!-- End Annotation -->
+
   <HR>
   <P ALIGN="CENTER">
   <A HREF="sage.html">Chamber of the Sages</A><BR>
@@ -43,12 +61,37 @@
   <A HREF="temple3.html">Water Temple</A><BR>
   <A HREF="zora.html">Zora's River/Domain/Fountain</A></P>
   <HR>
-  <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/19/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/19/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/19/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/19/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/19/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
-  <!-- END LINKEXCHANGE CODE -->
+    <!--
+    Gross, some kind of iFrame thing. These are so cursed.
+    I legit don't remember what this was at all.
+    -->
+    <!-- BEGIN LINKEXCHANGE CODE --> 
+    <center>
+      <!-- <iframe 
+        src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+        width=468 
+        height=60 
+        marginwidth=0 
+        marginheight=0 
+        hspace=0 
+        vspace=0 
+        frameborder=0 
+        scrolling=no
+      > -->
+        <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+          <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+          <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+        <!-- </a> -->
+      <!-- </iframe> -->
+      <br>
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+        <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+      <!-- </a> -->
+      <br>
+    </center>
+    <!-- END LINKEXCHANGE CODE -->
   <HR>
-  <P ALIGN="CENTER"><A HREF="infoside.html">Back Home</A></P>
+  <P ALIGN="CENTER"><A HREF="../home/infoside.html">Back Home</A></P>
   </body>
   </HTML>
   
