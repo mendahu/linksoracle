@@ -1,7 +1,23 @@
 <HTML>
   <HEAD>
   <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+  <link rel="stylesheet" href="../../styles/music-player.css" />
+  <script src="../../scripts/music-player.js"></script>
+  <script src="../../scripts/disable-right-click.js"></script>
+  <script>appendMusic("z64-house2.mp3")</script>
   <script language="JavaScript1.2">
+
+  /*
+  I remember implementing this, believe it or not. It came from a
+  very weird place - I didn't want people stealing the images off 
+  the site, so this would trigger an alert if you tried to right-click
+  > save anywhere in the document.
+
+  This is especially strange considering all these images are not
+  mine and were just stolen from other sites LOL. And as you can
+  see below, so was the script to prevent it!
+  */
   
   /*
   Disable right mouse click Script
@@ -9,18 +25,33 @@
   For full source code, installation instructions,
   100's more DHTML scripts, and Terms Of
   Use, visit dynamicdrive.com
-  This script last updated:99/04/05
+  This script last updated:99/04/05 (RIP)
   */
-  
-  if (document.all)
-  document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert('Copyright 1999 Ganon (links_oracle@hotmail.com) Banners Copyright their Owners')")
-  
+
+  // Looks like Chrome has discontinued support for onmousedown, mostly due to it
+  // being too narrow of use in a world of touch devices (this event wouldn't capture
+  // a long press).
+
+  // ORIGINAL CODE
+  // (I don't know if I've ever used the Function constructor syntax like this, it's pretty wild)
+  // if (document.all)
+  // document.body.onmousedown=new Function("if (event.button==2||event.button==3)alert(Copyright 1999 Ganon (links_oracle@hotmail.com)')")
+
+  // I've sort of reimplemented it here for posterity, triggering the alert.
+  // It doesn't actually stop you from proceeding with the download (or accessing
+  // the rest of the context menu)
+  disableRightClick() // disable-right-click.js
+
   </script>
   </HEAD>
   <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN" BACKGROUND="background.gif" BGPROPERTIES="FIXED">
   
   <FONT FACE="Zurich Ex BT" SIZE="2.5">
-  <BGSOUND SRC="z64-house2.mid" LOOP=10>
+
+  <!-- See music-player.js for more info on the music player -->
+  <div id="music-player"></div>
+  <!-- <BGSOUND SRC="z64-house2.mid" LOOP=10> -->
+
   <H1 ALIGN="CENTER">Other Zelda Sites</H1>
   <P ALIGN="CENTER">
   <table border="1" cellspacing="0" bgcolor="#000000"
@@ -32,123 +63,248 @@
           face="Zurich Ex BT">Banner</font></th>
       </tr>
       <tr>
-          <td><a href="http://browse.to/zelda64" target="_TOP"><font
-          size="2" face="Zurich Ex BT">David's Zelda 64 Site</font></a></td>
-          <td><font size="2" face="Zurich Ex BT"><a href="http://browse.to/zelda64" target="_top"><img src="https://www.angelfire.com/ny2/dwagner/images/Firebanner.gif">
-  </a></font></td>
+          <td>
+            <!-- <a href="http://browse.to/zelda64" target="_TOP"> -->
+            <a href="https://www.angelfire.com/ny2/dwagner" target="_TOP">
+                <font size="2" face="Zurich Ex BT">David's Zelda 64 Site</font>
+            </a>
+          </td>
+          <td>
+            <font size="2" face="Zurich Ex BT">
+                <!-- <a href="http://browse.to/zelda64" target="_top"> -->
+                <a href="https://www.angelfire.com/ny2/dwagner" target="_top">
+                    <img src="../../assets/Firebanner.gif">
+                </a>
+            </font>
+            <br />
+            <!-- Begin Annotation -->
+            <details class="annotation">
+                <summary>David's Site</summary>
+                I was able to get David's site working by bypassing the short URL service he had been using.
+                It looks suspiciously like my site but in red.
+            </details>
+            <!-- End Annotation --> 
+        </td>
       </tr>
       <tr>
-          <td><a href="https://www.angelfire.com/biz3/zelink/index.html" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Zelda Sky Temple</font></a></td>
-          <td><font size="2" face="Zurich Ex BT">None at this
-          Moment</font></td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/biz3/zelink/index.html" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Zelda Sky Temple</font>
+            <!-- </a> -->
+          </td>
+          <td><font size="2" face="Zurich Ex BT">None at this Moment</font></td>
       </tr>
       <tr>
-          <td><a href="http://surf.to/z64online" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Zelda 64 Online</font></a></td>
-          <td><font size="2" face="Zurich Ex BT">None at this
-          Moment</font></td>
+          <td>
+            <!-- <a href="http://surf.to/z64online" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Zelda 64 Online</font>
+            <!-- </a> -->
+          </td>
+          <td><font size="2" face="Zurich Ex BT">None at this Moment</font></td>
       </tr>
       <tr>
           <td><a href="https://www.angelfire.com/fl2/hyrule/index.html" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Hyrule.Net</font></a></td>
+          size="2" face="Zurich Ex BT">Hyrule.Net</font></a>
+
+        </td>
           <td><font size="2" face="Zurich Ex BT">None at this
-          Moment</font></td>
+          Moment</font> 
+          <!-- Begin Annotation -->
+          <details class="annotation">
+              <summary>Rod's Site</summary>
+              Looks like Rod's site is working too, and he's got a very similar format!
+              I'll venture to say we were all probably copying eachother trying to compete.
+          </details>
+          <!-- End Annotation -->
+        </td>
       </tr>
       <tr>
-          <td><a href="http://fly.to/HyrulesCastle" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Hyrule's Castle</font></a></td>
+          <td>
+            <!-- <a href="http://fly.to/HyrulesCastle" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Hyrule's Castle</font>
+            <!-- </a> -->
+          </td>
           <td><font size="2" face="Zurich Ex BT">None at this
-          Moment</font></td>
+          Moment</font>                   </td>
       </tr>
       <tr>
-          <td><a href="https://www.angelfire.com/in/zeldastuff"
-          target="_TOP"><font size="2" face="Zurich Ex BT">Zelda
-          and Mario 64 Stuff</font></a></td>
-          <td><a href="https://www.angelfire.com/in/zeldastuff"
-          target="_TOP"><font size="2" face="Zurich Ex BT"><img
-          src="https://www.angelfire.com/in/zeldastuff/images/zmstuff.JPG"
-          alt="Zelda and Mario 64 Stuff"></font></a></td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/in/zeldastuff" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Zelda and Mario 64 Stuff</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/in/zeldastuff" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <img src="../../assets/zmstuff.jpeg" alt="Zelda and Mario 64 Stuff">
+                </font>
+            <!-- </a> -->
+          </td>
       </tr>
       <tr>
-          <td><a href="http://come.to/zelda64domain" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Zelda 64 Domain</font></a></td>
-          <td><a href="http://come.to/zelda64domain" target="_TOP"><font
-          size="2" face="Zurich Ex BT"><img src="http://www.geocities.com/
-    TimesSquare/Dome/2268/banner.gif"
-          alt="Zelda 64 Domain" width="460" height="60"></font></a></td>
+          <td>
+            <!-- <a href="http://come.to/zelda64domain" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Zelda 64 Domain</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="http://come.to/zelda64domain" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <!-- <img src="http://www.geocities.com/ TimesSquare/Dome/2268/banner.gif" alt="Zelda 64 Domain" width="460" height="60"> -->
+                    <img src="" alt="Zelda 64 Domain Banner" width="460" height="60">
+                </font>
+            <!-- </a> -->
+          </td>
       </tr>
       <tr>
-          <td><a href="https://www.angelfire.com/tx2/z64home/"
-          target="_TOP"><font size="2" face="Zurich Ex BT">Zelda 64
-          Home</font></a></td>
-          <td><a href="https://www.angelfire.com/tx2/z64home/"
-          target="_TOP"><font size="2" face="Zurich Ex BT"><img
-          src="https://www.angelfire.com/tx2/z64home/images/Zelda64HomeBanner.GIF"
-          alt="Zelda 64 Home" width="460" height="100"></font></a></td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/tx2/z64home/" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Zelda 64 Home</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/tx2/z64home/" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <img src="../../assets/Zelda64HomeBanner.gif" alt="Zelda 64 Home" width="460" height="100">
+                </font>
+            <!-- </a> -->
+          </td>
       </tr>
       <tr>
-          <td><a href="http://fly.to/zelda-temple" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Zelda Temple</font></a></td>
-          <td><a href="http://fly.to/zelda-temple" target="_TOP"><font
-          size="2" face="Zurich Ex BT"><img
-          src="http://zeldasite.cjb.net/images/banner3.gif"
-          alt="Zelda-Temple" border="0" width="468" height="60"></font></a></td>
+          <td>
+            <!-- <a href="http://fly.to/zelda-temple" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Zelda Temple</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="http://fly.to/zelda-temple" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <!-- <img src="http://zeldasite.cjb.net/images/banner3.gif" alt="Zelda-Temple" border="0" width="468" height="60"> -->
+                    <img src="" alt="Zelda-Temple Banner" border="0" width="468" height="60">
+                </font>
+            <!-- </a> -->
+          </td>
       </tr>
       <tr>
           <td><a href="https://members.tripod.com/nextnintendo/main.html" target="_TOP"><font
           size="2" face="Zurich Ex BT">Project Dolphin Central</font></a></td>
           <td><a href="https://members.tripod.com/nextnintendo/main.html" target="_TOP"><font
           size="2" face="Zurich Ex BT"><img
-          src="https://members.tripod.com/nextnintendo/pdcbanner.gif"
-          alt="Project Dolphin Central" border="0" width="468" height="60"></font></a></td>
+          src="../../assets/pdcbanner.gif"
+          alt="Project Dolphin Central" border="0" width="468" height="60"></font></a>
+            <!-- Begin Annotation -->
+            <details class="annotation">
+                <summary>Project Dolphin's Site</summary>
+                Hilariously, this site has a redirect message on the main page saying that
+                it would no longer be updated and that users should instead visit the <em>new</em>
+                Project Dolphin site.<br /><br />
+                The new site is gone, but the old site persists, just like this one. And hey, they link
+                to us in their links section! 
+            </details>
+            <!-- End Annotation -->
+        </td>
       </tr>
       <tr>
-          <td><a href="http://members.xoom.com/evil_catbert/index.htm" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Source464</font></a></td>
+          <td>
+            <!-- <a href="http://members.xoom.com/evil_catbert/index.htm" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Source464</font>
+            <!-- </a> -->
+          </td>
           <td>Waiting for Webmaster to put banner/button link up.</td>
       </tr>
       <tr>
           <td><a href="https://www.angelfire.com/fl2/hyrule/index.html" target="_TOP"><font
           size="2" face="Zurich Ex BT">Hyrule.net</font></a></td>
           <td><a href="https://www.angelfire.com/fl2/hyrule/index.html" target="_TOP"><font
-          size="2" face="Zurich Ex BT">None at This Moment</td>
+          size="2" face="Zurich Ex BT">None at This Moment
+            <!-- Begin Annotation -->
+            <details class="annotation">
+                <summary>Rod's Site (Again)</summary>
+                Apparently Rod gets his site linked twice.
+            </details>
+            <!-- End Annotation -->
+        
+        </td>
       </tr>
       <tr>
-          <td><a href="http://www.geocities.com/Hollywood/Trailer/7695/zelda/" target="_TOP"><font
-          size="2" face="Zurich Ex BT">KiLLRoGG's Temple of Zelda 64</font></a></td>
-          <td><a href="http://www.geocities.com/Hollywood/Trailer/7695/zelda/" target="_TOP"><font
-          size="2" face="Zurich Ex BT"><img
-          src="http://www.geocities.com/Hollywood/Trailer/7695/metal/Animation12.gif"
-          alt="KiLLRoGG's Temple of Zelda 64" border="0"></td>
+          <td>
+            <!-- <a href="http://www.geocities.com/Hollywood/Trailer/7695/zelda/" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">KiLLRoGG's Temple of Zelda 64</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="http://www.geocities.com/Hollywood/Trailer/7695/zelda/" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <!-- <img src="http://www.geocities.com/Hollywood/Trailer/7695/metal/Animation12.gif" alt="KiLLRoGG's Temple of Zelda 64" border="0"> -->
+                    <img src="" alt="KiLLRoGG's Temple of Zelda 64 banner" border="0">
+                <!-- there just wasn't a closing tag, lol-->
+        </td>
       </tr>
       <tr>
-          <td><a href="http://tudozelda.cjb.net" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Tudocom Zelda Page</font></a></td>
-          <td><a href="http://tudozelda.cjb.net" target="_TOP"><font
-          size="2" face="Zurich Ex BT"><img
-          src="http://tudozelda64.virtualave.net/banner.gif"
-          alt="Tudocom Zelda Page" border="0"></td>
+          <td>
+            <!-- <a href="http://tudozelda.cjb.net" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Tudocom Zelda Page</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="http://tudozelda.cjb.net" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <!-- <img src="http://tudozelda64.virtualave.net/banner.gif" alt="Tudocom Zelda Page" border="0"> -->
+                    <img src="" alt="Tudocom Zelda Page banner" border="0">
+            <!-- another missing closing tag -->
+        </td>
       </tr>
       <tr>
-          <td><a href="https://www.angelfire.com/ma2/zelda64kix" target="_TOP"><font
-          size="2" face="Zurich Ex BT">Nathan's Zelda64 Site</font></a></td>
-          <td><a href="https://www.angelfire.com/ma2/zelda64kix" target="_TOP"><font
-          size="2" face="Zurich Ex BT"><img
-          src="https://www.angelfire.com/ma2/zelda64kix/images/bannerani.gif"
-          alt="Nathan's Zelda64 Site" border="0"></td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/ma2/zelda64kix" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">Nathan's Zelda64 Site</font>
+            <!-- </a> -->
+          </td>
+          <td>
+            <!-- <a href="https://www.angelfire.com/ma2/zelda64kix" target="_TOP"> -->
+                <font size="2" face="Zurich Ex BT">
+                    <!-- <img src="https://www.angelfire.com/ma2/zelda64kix/images/bannerani.gif" alt="Nathan's Zelda64 Site" border="0"> -->
+                    <img src="" alt="Nathan's Zelda64 Site banner" border="0">
+            <!-- another missing closing tag -->
+          </td>
       </tr>
   </table>
   
   </P>
   <HR>
   This site will no longer be putting links up.<HR>
+
+  <!--
+  Gross, some kind of iFrame thing. These are so cursed.
+  I legit don't remember what this was at all.
+  -->
   <!-- BEGIN LINKEXCHANGE CODE --> 
-  <center><iframe src="http://leader.linkexchange.com/13/X1034640/showiframe?" width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no>
-  <a href="http://leader.linkexchange.com/13/X1034640/clickle" target="_top"><img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/13/X1034640/showle?"></a></iframe><br><a href="http://leader.linkexchange.com/13/X1034640/clicklogo" target="_top"><img src="http://leader.linkexchange.com/13/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""></a><br></center>
+  <center>
+    <!-- <iframe 
+      src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+      width=468 
+      height=60 
+      marginwidth=0 
+      marginheight=0 
+      hspace=0 
+      vspace=0 
+      frameborder=0 
+      scrolling=no
+    > -->
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+        <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+        <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+      <!-- </a> -->
+    <!-- </iframe> -->
+    <br>
+    <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+      <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+    <!-- </a> -->
+    <br>
+  </center>
   <!-- END LINKEXCHANGE CODE -->
   <HR>
-  <P ALIGN="CENTER"><A HREF="infoside.html" TARGET="main">Back Home</A></P>
+  <P ALIGN="CENTER"><A HREF="../home/infoside.html" TARGET="main">Back Home</A></P>
   </body>
   </HTML>
   
