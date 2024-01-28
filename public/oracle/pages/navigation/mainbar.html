@@ -1,15 +1,12 @@
 <html>
   <head>
     <title>Link's Oracle</title>
+    <link rel="stylesheet" href="../../styles/annotations.css" />
   </head>
+
   <!--
     These methods of styling the site, just adding html 
     properties onto the body tag, is still wild to me in 2024.
-
-    I remember building the background image for this. I had
-    opened up Microsoft Paint and one pixel at a time made a descending
-    green gradient that faded to black. Then I copied and pasted the line
-    a bunch of time to vertically stack them and produce the whole image.
   -->
   <body
     bgcolor="BLACK"
@@ -20,6 +17,7 @@
     background="../../assets/navback.gif"
     BGPROPERTIES="FIXED"
   >
+
   <!-- This FONT tag just wraps the content, OMG -->
     <font face="Zurich Ex BT" size="2">
       <!--
@@ -35,17 +33,39 @@
             A:hover {text-decoration: none; color: blue}
 
       </style>
-      <br /><br /><br />
-      <a href="mainbar.html" target="navi"> <img src="../../assets/mainbutton.gif" /></a
-      ><br />
+      <br />
 
-      <!-- 
-        These navspace.gif files were cutouts from the background, 
-        used as "transparent" spacers that indented the text.
-        What an incredible amount of work that would be solved today with some margin.
-      -->
+      <!-- Begin Annotation -->
+      <details class="annotation">
+        <summary>Background</summary>
+        I remember building the background image for this. I had
+        opened up Microsoft Paint and one pixel at a time made a descending
+        green gradient that faded to black. Then I copied and pasted the line
+        a bunch of time to vertically stack them and produce the whole image.
+      </details>
+      <!-- End Annotation -->
+
+      <!-- I didn't know about top margin, apparently -->
+      <br />
+      <br />
+      <a href="mainbar.html" target="navi"><img src="../../assets/mainbutton.gif" /></a>
+      <br />
+
+      <br />
+      <!-- Begin Annotation -->
+      <details class="annotation">
+        <summary>Indentation</summary>
+        I apparently didn't know how to use margins or even just empty 
+        <code>&lt;div&gt;</code> elements. Instead, these navspace.gif 
+        files were cutouts from the background, used as "transparent" 
+        spacers that indented the text. What an incredible 
+        amount of work that would be solved today with some margin.
+      </details>
+      <!-- End Annotation -->
+
+      <br />
       <img src="../../assets/navspace.gif" />
-      <a href="../infoside.html" target="main">Main</a><br />
+      <a href="../home/infoside.html" target="main">Main</a><br />
 
       <img src="../../assets/navspace.gif" />
       <a href="../journal.html" target="main">Link's Journal</a><br /><br />

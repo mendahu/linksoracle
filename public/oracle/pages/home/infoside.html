@@ -1,0 +1,448 @@
+<HTML>
+  <HEAD>
+  <TITLE>Link's Oracle</TITLE>
+  <link rel="stylesheet" href="../../styles/annotations.css" />
+
+  <!-- 
+  Oh boy, here we go. I think I wrote _some_ of this JavaScript, 
+  but its too complex for thirteen year old me to have come up with
+  on his own!
+  -->
+  <SCRIPT LANGUAGE="JavaScript">
+    // nice, storing constants in a named variable, smart
+    var expDays = 30;
+    var exp = new Date(); 
+    exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+
+    function Who(info) {
+      var VisitorName = GetCookie('VisitorName')
+      if (VisitorName == null) {
+      VisitorName = prompt("What is thine name, Valiant Hero?");
+      SetCookie ('VisitorName', VisitorName, exp);
+      }
+      return VisitorName;
+    }
+
+    // oof, manual date parsing. Not even once, folks.
+    function When(info) {
+      var rightNow = new Date()
+      var WWHTime = 0;
+      WWHTime = GetCookie('WWhenH')
+      WWHTime = WWHTime * 1
+      var lastHereFormatting = new Date(WWHTime);
+      var intLastVisit = (lastHereFormatting.getYear() * 10000)+(lastHereFormatting.getMonth() * 100) + lastHereFormatting.getDate()
+      var lastHereInDateFormat = "" + lastHereFormatting;
+      var dayOfWeek = lastHereInDateFormat.substring(0,3)
+      var dateMonth = lastHereInDateFormat.substring(4,11)
+      var timeOfDay = lastHereInDateFormat.substring(11,16)
+      var year = lastHereInDateFormat.substring(23,25)
+      var WWHText = dayOfWeek + ", " + dateMonth + " at " + timeOfDay
+      SetCookie ("WWhenH", rightNow.getTime(), exp)
+      return WWHText
+    }
+
+    function Count(info) {
+      var WWHCount = GetCookie('WWHCount')
+      if (WWHCount == null) {
+        WWHCount = 0;
+      } else {
+        WWHCount++;
+      }
+      SetCookie ('WWHCount', WWHCount, exp);
+      return WWHCount;
+    }
+
+    // LOL this function is never called, it's just defined here for fun
+    function set() {
+      VisitorName = prompt("Who are you?");
+      SetCookie ('VisitorName', VisitorName, exp);
+      SetCookie ('WWHCount', 0, exp);
+      SetCookie ('WWhenH', 0, exp);
+    }
+
+    function getCookieVal(offset) {  
+      var endstr = document.cookie.indexOf (";", offset);  
+      if (endstr == -1)    
+      endstr = document.cookie.length;  
+      return unescape(document.cookie.substring(offset, endstr));
+    }
+
+    // manual cookie header parsing, also not fun
+    function GetCookie (name) {  
+      var arg = name + "=";  
+      var alen = arg.length;  
+      var clen = document.cookie.length;  
+      var i = 0;  
+      while (i < clen) {    
+      var j = i + alen;    
+      if (document.cookie.substring(i, j) == arg)      
+      return getCookieVal (j);    
+      i = document.cookie.indexOf(" ", i) + 1;    
+      if (i == 0) break;   
+      }  
+      return null;
+    }
+
+    function SetCookie (name, value) {  
+      var argv = SetCookie.arguments;  
+      var argc = SetCookie.arguments.length;  
+      var expires = (argc > 2) ? argv[2] : null;  
+      var path = (argc > 3) ? argv[3] : null;  
+      var domain = (argc > 4) ? argv[4] : null;  
+      var secure = (argc > 5) ? argv[5] : false;  
+      document.cookie = name + "=" + escape (value) + 
+      ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+      ((path == null) ? "" : ("; path=" + path)) +  
+      ((domain == null) ? "" : ("; domain=" + domain)) +    
+      ((secure == true) ? "; secure" : "");
+    }
+
+    // This function is never called either!
+    function DeleteCookie (name) {  
+      var exp = new Date();  
+      exp.setTime (exp.getTime() - 1);  
+      var cval = GetCookie (name);  
+      document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+    }
+  </SCRIPT>
+  
+  </HEAD>
+  <body BGCOLOR="BLACK" TEXT="WHITE" LINK="BLUE" ALINK="YELLOW" VLINK="GREEN">
+    
+  <FONT FACE="Zurich Ex BT" SIZE="2.5">
+  <BGSOUND SRC="z-owremix3.mid" LOOP=10>
+
+  <!-- wow, alt text, accessible design champ since 1999 -->
+  <H1 ALIGN="CENTER"><IMG SRC="oracle.jpg" ALT="Link's Oracle: The Best 
+  Zelda 64 Site Out There"></H1>
+
+
+  <P ALIGN="CENTER">
+  <!-- 
+  I've disabled the connections on this widget to prevent console errors. 
+  -->
+
+  <!-- BEGIN FASTCOUNTER CODE -->
+  <!-- <a href="http://member.linkexchange.com/cgi-bin/fc/fastcounter-login?1081835" target="_top"> -->
+    <!-- <img 
+      border="0" 
+      src="http://fastcounter.linkexchange.com/fastcounter?1081835+2163677" 
+      
+    > -->
+    <img src="" alt="This image is broken but it used to be a one of those all-time visitor counters!" />
+  <!-- </a> -->
+
+  <!-- END FASTCOUNTER CODE -->
+  </P>
+
+  <!-- Begin Annotation -->
+  <div style="display:flex;justify-content:center;width:100%;margin-block:1rem;">
+    <details class="annotation">
+      <summary>Welcome Message</summary>
+      My first foray into client-rendered web development. I remember this being a huge 
+      achievement for me, capturing your name and using cookies to remember your visit count!
+      Yes, the popup is very annoying now, and it really should be on the main wrapper page 
+      so it only triggers once rather than every time you visit the home page.
+    </details>
+  </div>
+  <!-- End Annotation -->
+
+  <CENTER>
+  <SCRIPT LANGUAGE="JavaScript">
+    // just pounding out this JS inline like a champ
+    document.write("Welcome " + Who() + ". You have visited Link's Oracle " + Count() + " time(s).  It was " + When() +" when you last visited Link's Oracle. Why so long? :)");
+  </SCRIPT>
+  </CENTER>
+  
+  <BR>
+  
+  <p align="center">
+    <b>Hey webmasters!! Want 100,000+ hits more per month? Join this program 
+      and get your site listed #1 on loads of sites!!! Just sign up and follow 
+      instructions! Awesome! Click <a href="http://www.special-report-network.net/specialreports.cgi/GD27830" target="_top">Here!</a><br>
+
+  <p align="center">
+    <!-- <A HREF="http://zeldasite.cjb.net/soscar.html"> -->
+      <!-- <IMG SRC="http://zeldasite.cjb.net/images/oscarsmallbutt1.gif" target="_blank" WIDTH=88 HEIGHT=31 BORDER=0 ALT="The Zelda Oscars by Zelda-Temple"> -->
+      <IMG SRC="" WIDTH=180 ALT="Not sure what 'The Zelda Oscars by Zelda-Temple' was, but this broken image used to point to a file called oscarsmallbutt1.gif and I am really curious what that was.">
+    <!-- </A> -->
+  </p>
+  
+  <br>
+
+  <table border="1" cellspacing="0" bordercolor="#008000"
+  bordercolordark="#008000" bordercolorlight="#008000">
+      <tr>
+          <td bgcolor="#008000"><font size="2" face="Zurich Ex BT">Link's Oracle- July 8/1999</font></td>
+      </tr>
+      <tr>
+          <td>
+              <!-- Begin Annotation -->
+              <br />
+                <details class="annotation">
+                  <summary>Big News</summary>
+                  I kind of enjoy how I had this "news feed" component here. I would post changes
+                  into this table after copying the old message into the archive ("Link's Journal", in
+                  the menu). No CMS powering this, no portal to enter it, just copying and pasting
+                  the old text into the other HTML file. <br /><br />
+                  There's definitely some fun stuff to unpack in here, too, like "updating 200 numbers 
+                  everday" (see the Hyrule at War page), and that mysterious send off teasing a 
+                  future of web development. Why did I call myself Ganon?
+                </details>
+                <br />
+              <!-- End Annotation -->
+
+            <font size="2" face="Zurich Ex BT">
+              Hey, big news. I will not be updating this site anymore.  All the neccessary info
+  is up and you can still use this site but I will no longer be updating any links, quiz resuslts, or Hyrule at War.  The Game is
+  too much for me to handle and No one else understands it.  If you check out that section I am putting up a legacies section and keeping the links section up
+  so you can still play Zelda Games online.  No forms will be answered and I will check my email once a week now.  I know I am
+  dissappointing everyone but if you had to update 200 numbers everyday you'd get tired of it too.  Well So long, and perhaps there will be more
+  sites from the famous Ganon...
+  <!-- appears to be some missing closing tags on this <td> and <font> -->
+      </tr>
+  </table>
+  
+  <!-- 
+  no memory of what this was, appears to be some kind of 
+  "Vote for the best Website" widget. I'm disabling the links
+  for safety.
+  -->
+  <P ALIGN="CENTER">
+    <!-- <A HREF="http://coolsurfin.net/cgi-bin/zelda/bigiron.cgi?ID=83" TARGET="_TOP">
+      <IMG SRC="http://coolsurfin.net/zelda/vote.jpg" border="0" width="150" height="150">
+      </A> -->
+      <IMG SRC="" border="0" width="150" height="150" alt="This broken link appears to have been some kind of 'Vote for the Best Website' Widget.">
+  </P>
+  <P ALIGN="CENTER">VOTE FOR ME!</P>
+
+  <!-- Begin Annotation -->
+  <br />
+  <div style="display:flex;justify-content:center;width:100%;margin-block:1rem;">
+    <details class="annotation">
+      <summary>Custom Email</summary>
+      I remember this being a big deal, a service that could provide you with your own
+      email address, with the added benefit of having a custom domain. It was normal
+      at the time to have something like <code>yourhandle@hotmail.com</code> but getting something
+      in your other side of the <code>@</code> symbol was a status symbol. And with this, you used
+      to be able to offer your <em>users</em> their own email on <em>your</em> subdomain. Epic.<br /><br />
+      I've disabled the form submission and links for safety, but that sure would be cool if 
+      I could log into <em>that</em> account again.
+    </details>
+  </div>
+  <!-- End Annotation -->
+  <p>
+    <center>
+      <!-- <a href="http://linksoracle.zzn.com"> -->
+        <!-- <img 
+          src="http://www.zzn.com/informail/images/but_service_English.gif"
+          BORDER="0" 
+          alt="Get a Free E-mail Address"
+        > -->
+        <img 
+          src="" 
+          alt="Get a Free E-mail Address"
+        >
+      <!-- </a> -->
+      <!-- <a href="http://www.zzn.com/informail/home.asp"> -->
+        <!-- <img 
+          src="http://www.zzn.com/informail/images/but_ZapZone_English.gif"
+          BORDER="0"
+          alt="Get your Own E-mail service"> -->
+        <img 
+          src=""
+          alt="Get your Own E-mail service">
+      <!-- </a> -->
+    <br>
+  <!-- <a href="http://linksoracle.zzn.com"> -->
+    Get your own Email Here
+  <!-- </a> -->
+  |
+  <!-- <a href="http://www.zzn.com/informail/home.asp"> -->
+    Get your own email service
+  <!-- </a> -->
+
+  <!-- <form method="POST" action="http://linksoracle.zzn.com/email/login/loginaction.asp" name="login"> -->
+  <form name="login">
+    <input type="hidden" name="company" value="linksoracle">
+    <input type="hidden" name="Interface" value="0">
+    <table width="350" border="0" cellpadding="2" cellspacing="0">
+      <tr>
+        <td colspan="3" BGcolor="#ffffff" height="20">
+        <font face="arial" size="3" color="#000000">
+        <b>&nbsp;Login to linksoracle mail </b></font>
+        </td>
+      </tr>
+
+      <!--
+      Incredible, a <tr> spacer. This is code from the service, not even my own,
+      so I can't even take credit for this!
+      -->
+      <tr>
+        <td colspan="3" BGcolor="#ffffff">
+          <!-- <img src="http://linksoracle.zzn.com/email/images/spacer2.gif" border="0" width="350" height="1"> -->
+          <img src="" border="0" width="350" height="1">
+        </td>
+      </tr>
+
+      <tr>
+        <td BGcolor="#ffffff"><font face="arial" size="2" color="#000000"><b>&nbsp;User Name:</b></font>
+        </td>
+        <td BGcolor="#ffffff"><font face="arial" size="2" color="#000000"><b>&nbsp;Password:</b></font>
+        </td>
+        <td BGcolor="#ffffff">&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td BGcolor="#ffffff">&nbsp;<input type="text" name="loginname" size="10">
+        </td>
+        <td BGcolor="#ffffff">&nbsp;<input type="password" name="loginpassword" size="10">
+        </td>
+        <td BGcolor="#ffffff" width="80" align="right">
+          <!-- <input type="image" name="Log_in" src="http://linksoracle.zzn.com/email/images/btn_lgn.gif" alt="Login" border="0"> -->
+          <input type="image" name="Log_in" src="" alt="Login Button" border="0" onclick="return (function(e){e.preventDefault()})(event)">
+        </td>
+      </tr>
+      <tr>
+        <td BGcolor="#ffffff" colspan="3">
+        <table border="0" width="350">
+          <tr>
+            <td>
+              <font size="1" face="Arial,Geneva" color="#808080">
+                <!-- <a href="http://linksoracle.zzn.com/email/TSupport/start.asp?Company=zzn&subdomain=linksoracle&EIP=0" target="_self"> -->
+                  Technical Support
+                <!-- </a>			 -->
+              </font>
+            </td>
+            
+            <td align="center">
+              <font size="1" face="Arial,Geneva" color="#808080">
+                <!-- <a href="http://linksoracle.zzn.com/email/noframes/help/p_help.html" target="_blank"> -->
+                  Help
+                <!-- </a> -->
+              </font>
+            </td>
+      
+            <td align="right" BGcolor="#ffffff">
+              <font size="1" face="Arial,Geneva" color="#808080">
+                <!-- <a href="http://linksoracle.zzn.com/email/login/HintLogin.asp?Company=linksoracle&amp;Interface=0" target="_self"> -->
+                  Password Reminder
+                <!-- </a> -->
+              </font>
+            </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </TABLE>
+  </form>
+  
+  <!--
+  Gross, some kind of iFrame thing. These are so cursed.
+  I legit don't remember what this was at all.
+  -->
+  <!-- BEGIN LINKEXCHANGE CODE --> 
+  <center>
+    <!-- <iframe 
+      src="http://leader.linkexchange.com/1/X1034640/showiframe?" 
+      width=468 
+      height=60 
+      marginwidth=0 
+      marginheight=0 
+      hspace=0 
+      vspace=0 
+      frameborder=0 
+      scrolling=no
+    > -->
+      <!-- <a href="http://leader.linkexchange.com/1/X1034640/clickle" target="_top"> -->
+        <!-- <img width=468 height=60 border=0 ismap alt="" src="http://leader.linkexchange.com/1/X1034640/showle?"> -->
+        <img src="" width=468 height=60 border=0 alt="Some kind of iframe widget from LinkExchange, whatever that was." >
+      <!-- </a> -->
+    <!-- </iframe> -->
+    <br>
+    <!-- <a href="http://leader.linkexchange.com/1/X1034640/clicklogo" target="_top"> -->
+      <!-- <img src="http://leader.linkexchange.com/1/X1034640/showlogo?" width=468 height=16 border=0 ismap alt=""> -->
+    <!-- </a> -->
+    <br>
+  </center>
+  <!-- END LINKEXCHANGE CODE -->
+  <BR>
+  
+  <!-- Begin Annotation -->
+    <br />
+    <details class="annotation">
+      <summary>HWF</summary>
+      What
+    </details>
+    <br />
+  <!-- End Annotation -->
+  <!-- Hyrule Code -->
+  <center>
+    <a href="http://hyrule2.hypermart.net/">
+      <img src="http://hyrule2.hypermart.net/hyrule.gif" alt="Hyrule: Home of HWF (Hyrule Wrestling Federation)">
+    </a>
+  </center>
+  <!-- End Code for Hyrule -->
+  
+  <br />
+  <!-- Begin Annotation -->
+  <br />
+  <details class="annotation">
+    <summary>Webring</summary>
+    This right here was peak Web 1.0. These webrings were similarly themed
+    websites banding together to promote their joint discoverability. Submit
+    your site with a banner to the exchange, and then post the banner on your 
+    site. When a visitor arrived here, they'd be shown a link to another partner
+    site. <br /><br />
+    Bots would destroy something like this today and algorithms have made them irrelevant
+    on your various social sites, but wow was there something to be said
+    about the human curation here. I miss it!
+  </details>
+  <br />
+  <!-- End Annotation -->
+  <table width=468 height=60 cellspacing=0 cellpadding=0 border=0>
+    <tr>
+      <td valign=top>
+        <!-- <a href="http://ads.mybannerswap.com/mbs/at-adclick.cgi?1000000771" target=_top> -->
+          <!-- <img alt="Zelda Sites Banner Xchange" src="http://ads.mybannerswap.com/mbs/nph-ad.cgi?1000000771-Y" width=468 height=60 border=0> -->
+          <img alt="Zelda Sites Banner Xchange" src="" width=468 height=60 border=0>
+        <!-- </a> -->
+        <br>
+        <center>
+          <!-- <a href="http://www.lohyrule.com/" target=_top> -->
+            <font size=2>Member of ZSBX</font>
+          <!-- </a> -->
+        </center>
+      </td>
+    </tr>
+  </table>
+  
+  <!--
+  I don't know what this code does, it seems to load some strange single pixel image
+  (that isn't even a broken link!!) and then show a counter of some kind? I am turning it off.
+  -->
+  <!-- start of NedStat code -->
+  <!-- <P ALIGN="CENTER">
+    <a href="http://nedstat.tripod.com/bin/viewstat?name=ganon4-1">
+      <img src="http://nedstat.tripod.com/bin/nedstat.gif?name=ganon4-1" border=0 alt="Nedstat Counter" width=22 height=22>
+    </a>
+  </P> -->
+  <!-- end of NedStat code -->
+
+  <!-- Begin Annotation -->
+  <br />
+  <details class="annotation">
+    <summary>Browser Wars</summary>
+    Hard not to say anythign about this! At the time I was a big fan of Internet Explorer over Netscape
+    because of all the extra bits it supported, when Netscape did not! Looking back now, I know a lot more
+    about what was happening here and I'd surely have been rooting for Netscape, but the culture at this time
+    was very bitter between these two competitors and the internet was in flux! Looks I'm on record 
+    for which side I took!
+  </details>
+  <br />
+  <!-- End Annotation -->
+  </P>
+  <P ALIGN="CENTER"><I>Best viewed in Microsoft Internet Explorer 4.0+. Do not use Netscape!</I></P>
+  <P ALIGN="CENTER"><a href="http://www.microsoft.com/msdownload/iebuild/msnie5/en-ca/msnie5.htm" target="_top"><IMG SRC="IErules.gif"></a></P>
+  </body>
+  </HTML>

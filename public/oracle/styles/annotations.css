@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+details.annotation {
+  background-color: purple;
+  border-radius: 12px;
+  width: fit-content;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-family: Helvetica, sans-serif;
+  max-width: 250px;
+  text-align: left;
+}
+
+details[open].annotation {
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+details[open].annotation summary {
+  margin-bottom: 0.5rem;
+
+}
+
+details.annotation summary {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
